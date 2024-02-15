@@ -406,7 +406,7 @@
                                 ACCOUNT
                             </li>
                             <li>
-                                <a href="echo-billing.html" class="side-menu__link ">
+                                <a href="/diskon" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="percent-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                     <div class="side-menu__link__title">Billing</div>
                                 </a>
@@ -433,7 +433,7 @@
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="echo-add-product.html" class="side-menu__link ">
+                                <a href="/add-produk" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                     <div class="side-menu__link__title">Add Product</div>
                                 </a>
@@ -447,7 +447,7 @@
                                     <i data-tw-merge="" data-lucide="chevron-down" class="stroke-[1] w-5 h-5 side-menu__link__chevron"></i>
                                 </a>
                                 <!-- BEGIN: Second Child -->
-                                <ul class="hidden">
+                                {{-- <ul class="hidden">
                                     <li>
                                         <a href="echo-product-grid.html" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="layout-panel-left" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
@@ -458,7 +458,7 @@
                                         <!-- BEGIN: Third Child -->
                                         <!-- END: Third Child -->
                                     </li>
-                                </ul>
+                                </ul> --}}
                                 <!-- END: Second Child -->
                             </li>
 
@@ -494,9 +494,9 @@
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="javascript:;" class="side-menu__link ">
+                                <a href="" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="file-archive" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Sellers</div>
+                                    <div class="side-menu__link__title">Discount</div>
                                     <i data-tw-merge="" data-lucide="chevron-down" class="stroke-[1] w-5 h-5 side-menu__link__chevron"></i>
                                 </a>
                                 <!-- BEGIN: Second Child -->

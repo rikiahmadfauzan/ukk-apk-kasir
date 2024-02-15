@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('diskon_produks', function (Blueprint $table) {
             $table->id();
             $table->string('nama_diskon');
-            $table->string('jenis_diskon');
+            $table->enum('jenis_diskon', ['persentase', 'nominal']);
             $table->integer('nilai_diskon');
             $table->string('deskripsi');
-            $table->date('berlaku_mulai');
-            $table->date('berlaku_selesai');
+            $table->text('berlaku_mulai');
+            $table->text('berlaku_selesai');
             $table->timestamps();
         });
     }

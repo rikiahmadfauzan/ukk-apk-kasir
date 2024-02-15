@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DiskonController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-    //Login Controller
+        //Login Controller
 Route::get('/login',[LoginController::class,'login']);
 Route::get('/register',[LoginController::class,'register']);
 Route::get('/logout',[LoginController::class,'logout']);
@@ -33,10 +35,10 @@ Route::post('/create',[LoginController::class,'create']);
 
 Route::middleware('status.login')->group(function(){
 
-//Admin
+    //Admin
 Route::get('/dashbord',[AdminController::class,'index']);
 
-//Pengguna
+    //Pengguna
 Route::get('/home',[UserController::class,'index']);
 Route::get('/add/pengguna',[UserController::class,'add']);
 Route::get('/pengguna',[UserController::class,'pengguna']);
@@ -45,15 +47,22 @@ Route::post('/pengguna/update/{id}',[UserController::class,'update']);
 Route::get('/pengguna/delete/{id}',[UserController::class,'delete']);
 
 });
-//Pelanggan
+    //Pelanggan
 Route::get('/pelanggan',[PelangganController::class,'index']);
 Route::get('/data/pelanggan',[PelangganController::class,'view']);
 Route::post('/create/pelanggan',[PelangganController::class,'create']);
 
-//KategoriProduk
+    //KategoriProduk
 Route::get('/kategori-produk',[KategoriProdukController::class,'index']);
 Route::post('/create/kategori',[KategoriProdukController::class,'create']);
-Route::post('/edit/kategori/{id}',[KategoriProdukController::class,'edit']);
+Route::post('/update/kategori/{id}',[KategoriProdukController::class,'edit']);
 Route::get('/kategori/delete/{id}',[KategoriProdukController::class,'delete']);
 
+    //produk
+Route::get('/add-produk',[ProdukController::class,'add']);
+Route::post('/create/produk',[ProdukController::class,'create']);
 
+    //produk
+Route::get('/diskon',[DiskonController::class,'index']);
+Route::get('/add-diskon',[DiskonController::class,'add']);
+Route::post('/diskon/create',[DiskonController::class,'create']);
