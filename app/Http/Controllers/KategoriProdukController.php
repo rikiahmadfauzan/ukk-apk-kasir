@@ -22,7 +22,7 @@ class KategoriProdukController extends Controller
         KategoriProduk::where('id', $request->id)->delete();
         return redirect('/kategori-produk');
     }
-    public function edit(Request $request){
+    public function update(Request $request){
         $credentials = $request->validate([
             'nama_kategori' => 'required',
             'status' => 'required'

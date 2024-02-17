@@ -394,6 +394,14 @@
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
                             </li>
+                            <li>
+                                <a href="/pelanggan" class="side-menu__link ">
+                                    <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Pelanggan</div>
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li>
                             {{-- <li>
                                 <a href="echo-add-user.html" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="package-plus" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
@@ -406,17 +414,17 @@
                                 ACCOUNT
                             </li>
                             <li>
-                                <a href="/diskon" class="side-menu__link ">
+                                <a href="/penjualan" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="percent-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Billing</div>
+                                    <div class="side-menu__link__title">Penjualan</div>
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="echo-invoice.html" class="side-menu__link ">
+                                <a href="/diskon" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="database-zap" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Invoice</div>
+                                    <div class="side-menu__link__title">Discount</div>
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
@@ -433,32 +441,32 @@
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="/add-produk" class="side-menu__link ">
-                                    <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Add Product</div>
-                                </a>
-                                <!-- BEGIN: Second Child -->
-                                <!-- END: Second Child -->
-                            </li>
-                            <li>
-                                <a href="javascript:;" class="side-menu__link ">
+                                <a class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="table2" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                     <div class="side-menu__link__title">Products</div>
                                     <i data-tw-merge="" data-lucide="chevron-down" class="stroke-[1] w-5 h-5 side-menu__link__chevron"></i>
                                 </a>
                                 <!-- BEGIN: Second Child -->
-                                {{-- <ul class="hidden">
+                                <ul class="hidden">
                                     <li>
-                                        <a href="echo-product-grid.html" class="side-menu__link ">
+                                        <a href="/add-produk" class="side-menu__link ">
+                                            <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                            <div class="side-menu__link__title">Add Product</div>
+                                        </a>
+                                        <!-- BEGIN: Second Child -->
+                                        <!-- END: Second Child -->
+                                    </li>
+                                    <li>
+                                        <a href="/produk" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="layout-panel-left" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
-                                                Product Grid
+                                               Data Produk
                                             </div>
                                         </a>
                                         <!-- BEGIN: Third Child -->
                                         <!-- END: Third Child -->
                                     </li>
-                                </ul> --}}
+                                </ul>
                                 <!-- END: Second Child -->
                             </li>
 
@@ -471,10 +479,10 @@
                                 <!-- BEGIN: Second Child -->
                                 <ul class="hidden">
                                     <li>
-                                        <a href="echo-transaction-list.html" class="side-menu__link ">
+                                        <a href="/detail-jual" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="divide-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
-                                                Transaction List
+                                               Detail Jual
                                             </div>
                                         </a>
                                         <!-- BEGIN: Third Child -->

@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Produk extends Model
 {
     use HasFactory;
-    public function kategori_produk(){
-        return $this->belongsTo(Produk::class, 'kategori_produk_id');
-    }
     protected $table = 'produks';
     protected $primaryKey = 'id';
     protected $fillable = [

@@ -12,10 +12,10 @@ class DiskonController extends Controller
         $data['diskon_produk'] = DiskonProduk::all();
         return view('diskon.data-diskon', $data);
     }
-    public function add(){
-        $data['foto'] = Produk::all();
-        return view('diskon.add-diskon',$data);
-    }
+    // public function add(){
+    //     $data['foto'] = Produk::all();
+    //     return view('diskon.add-diskon',$data);
+    // }
     public function create(Request $request){
         $credentials = $request->validate([
             'nama_diskon' => 'required',
@@ -27,5 +27,22 @@ class DiskonController extends Controller
         ]);
         DiskonProduk::create($credentials);
         return redirect('/diskon');
+    }
+    public function update(Request $request){
+        $credentials = $request->validate([
+            'nama_diskon' => 'required',
+            'jenis_diskon' => 'required',
+            'nilai_diskon' => 'required',
+            'deskripsi' => 'required',
+            'berlaku_mulai' => 'required',
+            'berlaku_selesai' => 'required'
+        ]);
+        DiskonProduk::where('id', $request->id)->update($credentials);
+        return redirect('/diskon');
+    }
+    public function delete(Request $request){
+        DiskonProduk::where('id', $request->id)->delete();
+        return redirect('/diskon');
+        
     }
 }

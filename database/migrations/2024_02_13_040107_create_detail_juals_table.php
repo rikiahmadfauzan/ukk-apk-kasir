@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('jumlah_produk');
             $table->integer('harga_jual');
-            $table->unsignedBigInteger('penjualan_id');
-            $table->unsignedBigInteger('produk_kode');
+            $table->unsignedBigInteger('penjual an_id');
+            $table->unsignedBigInteger('produk_id');
             $table->timestamps();
             $table->foreign('penjualan_id')->references('id')->on('penjualans')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('produk_kode')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('produk_id')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('tanggal_jual');
+            $table->text('tanggal_jual');
             $table->enum('metode_pembayaran', ['cod', 'debit', 'cash']);
             $table->unsignedBigInteger('pelanggan_id');
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans')->cascadeOnDelete()->cascadeOnUpdate();

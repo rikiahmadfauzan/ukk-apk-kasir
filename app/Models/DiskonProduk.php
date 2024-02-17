@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class DiskonProduk extends Model
 {
     use HasFactory;
-    public function produk(){
-        return $this->hasMany(DiskonProduk::class, 'diskon_produk_id');
-    }
     protected $table = 'diskon_produks';
     protected $primaryKey = 'id';
     protected $fillable = [

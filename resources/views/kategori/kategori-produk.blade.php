@@ -261,7 +261,7 @@
                                                                                 data-lucide="check-square"
                                                                                 class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                             Edit</a>
-                                                                        <a href="/kategori/delete/{{ $item->id }}"
+                                                                        <a href="/delete/kategori/{{ $item->id }}"
                                                                             class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-danger"><i
                                                                                 data-tw-merge="" data-lucide="trash2"
                                                                                 class="stroke-[1] mr-2 h-4 w-4"></i>
@@ -317,7 +317,7 @@
                                                                 <div class="col-span-12 sm:col-span-6">
                                                                     <label data-tw-merge for="modal-form-6"
                                                                         class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
-                                                                        Level
+                                                                        Status
                                                                     </label>
                                                                     <select name="status" data-tw-merge id="modal-form-6"
                                                                         class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
