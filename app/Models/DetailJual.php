@@ -14,6 +14,10 @@ class DetailJual extends Model
     public function penjualan(){
         return $this->belongsTo(Penjualan::class, 'penjualan_id');
     }
+    // public function detail_jual(){
+    //     return $this->belongsTo(Penjualan::class, 'penjualan_id');
+    // }
+
     protected $table = 'detail_juals';
     protected $primaryKey = 'id';
     protected $fillable = [

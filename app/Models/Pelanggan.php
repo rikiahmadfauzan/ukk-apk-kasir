@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pelanggan extends Model
 {
-    // public function penjualan(){
-    //     return $this->hasMany(Penjualan::class, 'id');
-    // }
     use HasFactory;
+    public function penjualan(){
+        return $this->hasMany(Pelanggan::class, 'pelanggan_id');
+    }
     protected $table = 'pelanggans';
     protected $primaryKey = 'id';
     protected $fillable = [

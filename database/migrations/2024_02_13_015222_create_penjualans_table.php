@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_penjualan');
             $table->text('tanggal_jual');
             $table->enum('metode_pembayaran', ['cod', 'debit', 'cash']);
             $table->unsignedBigInteger('pelanggan_id');

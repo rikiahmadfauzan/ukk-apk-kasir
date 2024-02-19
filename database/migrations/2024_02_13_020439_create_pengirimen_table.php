@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('pengirimen', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_pengiriman');
+            $table->string('kode_pengiriman');
+            $table->text('tanggal_pengiriman');
             $table->string('biaya_pengiriman');
-            $table->enum('status_pengiriman',['proses', 'dikirim', 'selesai']);
+            $table->enum('status_pengiriman',['proses', 'dikirim', 'selesai', 'refund'])->default('proses');
             $table->unsignedBigInteger('penjualan_id');
             $table->foreign('penjualan_id')->references('id')->on('penjualans')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

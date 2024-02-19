@@ -489,7 +489,17 @@
                                         <!-- END: Third Child -->
                                     </li>
                                     <li>
-                                        <a href="echo-transaction-detail.html" class="side-menu__link ">
+                                        <a href="/pengiriman" class="side-menu__link ">
+                                            <i data-tw-merge="" data-lucide="plus-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                            <div class="side-menu__link__title">
+                                                Transaction Detail
+                                            </div>
+                                        </a>
+                                        <!-- BEGIN: Third Child -->
+                                        <!-- END: Third Child -->
+                                    </li>
+                                    <li>
+                                        <a href="/transaksi" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="plus-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
                                                 Transaction Detail

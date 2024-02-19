@@ -178,7 +178,7 @@
                                                         </div> --}}
                                                             <div class="ml-3.1">
                                                                 <a class="whitespace-nowrap font-medium" href="#">
-                                                                    {{ $item->pelanggan->nama_pelanggan }}
+                                                                    {{ $item->nama_pelanggan }}
                                                                 </a>
                                                                 <div
                                                                     class="mt-0.5 whitespace-nowrap text-xs text-slate-500">

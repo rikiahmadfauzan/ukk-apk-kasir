@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Pengiriman extends Model
 {
     use HasFactory;
+    public function penjualan(){
+        return $this->belongsTo(Penjualan::class,'penjualan_id');
+
+    }
+    protected $table = 'pengirimen';
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'kode_pengiriman',
+        'tanggal_pengiriman',
+        'biaya_pengiriman',
+        'status_pengiriman',
+        'penjualan_id'
+
+    ];
 }

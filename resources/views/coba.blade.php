@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h4>Add Diskon</h4>
+    {{-- <h4>Add Diskon</h4>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -52,7 +52,8 @@
                 </td>
             </tr>
         </table>
-    </form>
+    </form> --}}
+    <h4>Hello Word</h4>
 </body>
 
 </html>

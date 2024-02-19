@@ -20,7 +20,25 @@ class ProdukController extends Controller
         return view('produk.add-produk',$data);
     }
     public function create(Request $request){
+        $produk = Produk::latest()->first();
+        $kode_produk = "ALEX";
+        $kode_tahun = date('Y');
+        $kode_bulan = date('m');
+        $kode_hari = date('d');
+        if($produk == null){
+            //kode awal
+            $no_kode = '0001';
+        }else{
+            //kode berikutnya
+            // $no_kode = substr($produk->kode_produk, 8, 4)+1;
+            $explode = explode("/", $produk->kode_produk);
+            $no_kode = intval($explode[4]+1);
+            $no_kode = str_pad($no_kode, 4, '0', STR_PAD_LEFT);
+        }
+        // $kode = $kode_produk .'/'. $kode_tahun .'/'. $no_kode;
+        $kode = "$kode_produk/$kode_tahun/$kode_bulan/$kode_hari/$no_kode";
         $credentials = $request->validate([
+            // 'kode_produk' => 'required',
             'nama_produk' => 'required',
             'gambar_produk' => 'required',
             'harga' => 'required',
@@ -30,6 +48,7 @@ class ProdukController extends Controller
             'diskon_produk_id' => 'required'
         ]);
         Produk::create([
+            'kode_produk' => $kode,
             'nama_produk' => $request->nama_produk,
             'gambar_produk' => $request->file('gambar_produk')->store('foto-produk'),
             'harga' => $request->harga,
