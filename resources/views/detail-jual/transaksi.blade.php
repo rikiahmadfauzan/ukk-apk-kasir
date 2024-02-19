@@ -86,7 +86,7 @@
                                                 </div>
                                                 <div class="mt-1.5">
                                                     <button data-tw-toggle="modal"
-                                                        {{-- data-tw-target="#header-footer-modal-edit{{ $pengiriman->id }}" --}}
+                                                        data-tw-target="#header-footer-modal-edit{{ $pengiriman->id }}"
                                                         data-tw-merge=""
                                                         class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed w-full border-primary/20 text-primary/80 hover:bg-slate-50"><i
                                                             data-tw-merge="" data-lucide="pen-square"
@@ -95,7 +95,7 @@
                                                 </div>
                                                 <!-- BEGIN: Modal Content -->
                                                 <div data-tw-backdrop="" aria-hidden="true" tabindex="-1"
-                                                    {{-- id="header-footer-modal-edit{{ $pengiriman->id }}" --}}
+                                                    id="header-footer-modal-edit{{ $pengiriman->id }}"
                                                     class="modal group bg-gradient-to-b from-theme-1/50 via-theme-2/50 to-black/50 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 [&amp;:not(.show)]:duration-[0s,0.2s] [&amp;:not(.show)]:delay-[0.2s,0s] [&amp;:not(.show)]:invisible [&amp;:not(.show)]:opacity-0 [&amp;.show]:visible [&amp;.show]:opacity-100 [&amp;.show]:duration-[0s,0.4s]">
                                                     <div data-tw-merge
                                                         class="w-[90%] mx-auto bg-white relative rounded-md shadow-md transition-[margin-top,transform] duration-[0.4s,0.3s] -mt-16 group-[.show]:mt-16 group-[.modal-static]:scale-[1.05] dark:bg-darkmode-600 sm:w-[460px]">
@@ -122,7 +122,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        {{-- <form action="/pengiriman/change/{{ $pengiriman->id }}" --}}
+                                                        <form action="/transaksi/change/{{ $pengiriman->id }}"
                                                             method="post">
                                                             @csrf
                                                             <div data-tw-merge class="p-5 grid grid-cols-12 gap-4 gap-y-3">
@@ -134,7 +134,7 @@
                                                                     <select name="status_pengiriman" data-tw-merge
                                                                         id="modal-form-6"
                                                                         class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
-                                                                        {{-- @if ($pengiriman->status_pengiriman == 'proses')
+                                                                        @if ($pengiriman->status_pengiriman == 'proses')
                                                                             <option value="proses" selected>proses</option>
                                                                             <option value="dikirim">dikirim</option>
                                                                             <option value="selesai">selesai</option>
@@ -156,7 +156,7 @@
                                                                             <option value="dikirim">dikirim</option>
                                                                             <option value="selesai">selesai</option>
                                                                             <option value="refund" selected>refund</option>
-                                                                        @endif --}}
+                                                                        @endif
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -235,7 +235,7 @@
                                                         <div class="w-54 sm:mr-auto">Name:</div>
                                                         <a class="underline decoration-primary/30 decoration-dotted underline-offset-[3px]"
                                                             href="#">
-                                                            {{ $penjualan->pelanggan->nama_pelanggan }}
+                                                            {{ $pelanggan->nama_pelanggan }}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -245,7 +245,7 @@
                                                     <div
                                                         class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
                                                         <div class="w-54 sm:mr-auto">Phone Number:</div>
-                                                        {{ $penjualan->pelanggan->no_telpon }}
+                                                        {{ $pelanggan->no_telpon }}
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center">
@@ -356,7 +356,7 @@
                                                                 <div class="flex items-center">
                                                                     <div class="image-fit zoom-in h-11 w-11">
                                                                         <img data-placement="top" title="Tue Mar 2021"
-                                                                            {{-- src="/storage/{{ $detail_jual-produk->gambar_produk }}" --}}
+                                                                            src="/storage/{{ $produk->gambar_produk }}"
                                                                             alt="Tailwise - Admin Dashboard Template"
                                                                             class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]">
                                                                     </div>
@@ -369,7 +369,7 @@
                                                                             class="mt-1 flex flex-col gap-0.5 whitespace-nowrap text-xs text-slate-500">
                                                                             Category
                                                                             :
-                                                                            {{-- {{ $detail_jual->produk->kategori_produk->nama_kategori }} --}}
+                                                                            {{-- {{ $detail_jual->produk->kategori_produ }} --}}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -377,23 +377,23 @@
                                                             <td data-tw-merge=""
                                                                 class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
                                                                 <div class="whitespace-nowrap">
-                                                                    {{-- {{ $detail_jual->jumlah_produk }} --}}
+                                                                    {{ $detail_jual->jumlah_produk }}
                                                                 </div>
                                                             </td>
                                                             <td data-tw-merge=""
                                                                 class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
                                                                 <div class="whitespace-nowrap">
-                                                                    {{-- @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
+                                                                    @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
                                                                         {{ $detail_jual->produk->diskon_produk->nilai_diskon }}%
                                                                     @elseif($detail_jual->produk->diskon_produk->jenis_diskon == 'nominal')
                                                                         -{{ $detail_jual->produk->diskon_produk->nilai_diskon }}
-                                                                    @endif --}}
+                                                                    @endif
                                                                 </div>
                                                             </td>
                                                             <td data-tw-merge=""
                                                                 class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
                                                                 <div class="whitespace-nowrap font-medium">
-                                                                    {{-- {{ number_format($detail_jual->harga_jual) }} --}}
+                                                                    {{ number_format($detail_jual->harga_jual) }}
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -402,15 +402,15 @@
                                                 </table>
                                             </div>
                                             {{-- Mengitung --}}
-                                            {{-- @php
+                                            @php
                                                 $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
                                                 $diskon = ($detail_jual->produk->diskon_produk->nilai_diskon / 100) * $detail_jual->harga_jual;
                                                 $biaya_pengiriman = $pengiriman->biaya_pengiriman;
                                                 $total = $subtotal + $biaya_pengiriman - $diskon;
-                                            @endphp --}}
+                                            @endphp
                                             {{-- Mengitung --}}
 
-                                            {{-- <div class="mb-5 ml-auto mt-3 flex flex-col gap-3.5 pr-5 text-right">
+                                            <div class="mb-5 ml-auto mt-3 flex flex-col gap-3.5 pr-5 text-right">
                                                 <div class="flex items-center justify-end">
                                                     <div class="text-slate-500">Subtotal :</div>
                                                     <div class="w-20 font-medium text-slate-600 sm:w-48">
@@ -435,7 +435,7 @@
                                                         {{ number_format($total) }}
                                                     </div>
                                                 </div>
-                                            </div> --}}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

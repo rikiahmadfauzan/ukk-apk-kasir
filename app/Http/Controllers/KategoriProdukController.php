@@ -24,7 +24,7 @@ class KategoriProdukController extends Controller
     }
     public function update(Request $request){
         $credentials = $request->validate([
-            'nama_kategori' => 'required',
+            // 'nama_kategori' => 'required',
             'status' => 'required'
         ]);
         KategoriProduk::where('id', $request->id)->update($credentials);

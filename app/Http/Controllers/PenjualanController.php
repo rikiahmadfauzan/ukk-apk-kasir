@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
 {
-  
+
     public function transaksi(){
         $data['produk'] = Produk::first();
         $data['detail_jual'] = DetailJual::first();
@@ -82,7 +82,7 @@ class PenjualanController extends Controller
             'metode_pembayaran' => 'required',
             // 'penjualan_id' => 'required'
         ]);
-        Penjualan::where('pelanggan_id', $request->pelanggan_id)->update($credentials);
+        Penjualan::where('id', $request->id)->update($credentials);
         return redirect('/penjualan');
     }
     public function delete(Request $request){

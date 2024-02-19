@@ -67,13 +67,13 @@ class PengirimanController extends Controller
 
         return redirect('/pengiriman');
     }
-    public function change(Request $request){
-        $credentials = $request->validate([
-            'status_pengiriman' => 'required'
-        ]);
+    // public function change(Request $request){
+    //     $credentials = $request->validate([
+    //         'status_pengiriman' => 'required'
+    //     ]);
 
-        Pengiriman::where('id', $request->id)->update($credentials);
+    //     Pengiriman::where('id', $request->id)->update($credentials);
 
-        return redirect('/transaksi');
-    }
+    //     return redirect()->back();
+    // }
 }

@@ -13,8 +13,8 @@ class DetailJualController extends Controller
 {
     public function transaksi(Request $request){
         $data['produk'] = Produk::where('id', $request->id)->first();
-        // $data['pelanggan'] = Pelanggan::where('id', $request->id)->first();
-        // $data['detail_jual'] = DetailJual::where('id', $request->id)->first();
+        $data['pelanggan'] = Pelanggan::where('id', $request->id)->first();
+        $data['detail_jual'] = DetailJual::where('id', $request->id)->first();
         $data['penjualan'] = Penjualan::where('id', $request->id)->first();
         $data['pengiriman'] = Pengiriman::where('id', $request->id)->first();
         return view('detail-jual.transaksi', $data);
@@ -66,5 +66,14 @@ class DetailJualController extends Controller
         DetailJual::where('id', $request->id)->delete();
         return redirect('/detail-jual');
 
+    }
+    public function change(Request $request){
+        $credentials = $request->validate([
+            'status_pengiriman' => 'required'
+        ]);
+
+        Pengiriman::where('id', $request->id)->update($credentials);
+
+        return redirect()->back();
     }
 }

@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('coba');
+    return view('index');
 });
         //Login Controller
 Route::get('/login',[LoginController::class,'login']);
@@ -78,7 +78,7 @@ Route::get('/diskon/delete/{id}',[DiskonController::class,'delete']);
     //Penjualan
 Route::get('/penjualan',[PenjualanController::class,'index']);
 Route::post('/create/penjualan',[PenjualanController::class,'create']);
-Route::post('/update/penjualan/{pelanggan_id}',[PenjualanController::class,'update']);
+Route::post('/update/penjualan/{id}',[PenjualanController::class,'update']);
 Route::get('/delete/penjualan/{id}',[PenjualanController::class,'delete']);
 
     //Detail Jual
@@ -88,12 +88,13 @@ Route::post('/detail-jual/create',[DetailJualController::class,'create']);
 Route::post('/detail/jual/update/{id}',[DetailJualController::class,'update']);
 Route::get('/detail-jual/delete/{id}',[DetailJualController::class,'delete']);
 Route::get('/transaksi/{id}',[DetailJualController::class,'transaksi']);
+Route::post('/transaksi/change/{id}',[DetailJualController::class,'change']);
+
 
     //Pengiriman
 Route::get('/transaksi',[PengirimanController::class,'transaksi']);
 Route::get('/pengiriman',[PengirimanController::class,'index']);
 Route::post('/pengiriman/create',[PengirimanController::class,'create']);
 Route::post('/pengiriman/update/{id}',[PengirimanController::class,'update']);
-Route::post('/pengiriman/change/{id}',[PengirimanController::class,'change']);
 Route::get('/pengiriman/delete/{id}',[PengirimanController::class,'delete']);
 
