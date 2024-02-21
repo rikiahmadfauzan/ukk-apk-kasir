@@ -430,6 +430,25 @@
                                 <!-- END: Second Child -->
                             </li>
                             <li class="side-menu__divider">
+                                Pembelian
+                            </li>
+                            <li>
+                                <a href="/pembelian" class="side-menu__link ">
+                                    <i data-tw-merge="" data-lucide="percent-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Pembelian</div>
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li>
+                            <li>
+                                <a href="/detail-beli" class="side-menu__link ">
+                                    <i data-tw-merge="" data-lucide="database-zap" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Detail Beli</div>
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li>
+                            <li class="side-menu__divider">
                                 E-COMMERCE
                             </li>
                             <li>

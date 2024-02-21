@@ -23,6 +23,9 @@ class Produk extends Model
     public function detail_jual(){
         return $this->hasMany(Produk::class, 'produk_id');
     }
+    public function detail_beli(){
+        return $this->hasMany(Produk::class, 'produk_id');
+    }
     protected $table = 'produks';
     protected $primaryKey = 'id';
     protected $fillable = [

@@ -12,13 +12,14 @@ use Illuminate\Http\Request;
 class PenjualanController extends Controller
 {
 
-    public function transaksi(){
-        $data['produk'] = Produk::first();
-        $data['detail_jual'] = DetailJual::first();
-        $data['penjualan'] = Penjualan::first();
-        $data['pengiriman'] = Pengiriman::first();
-        return view('pengiriman.transaksi', $data);
-    }
+   
+    // public function transaksi(){
+    //     $data['produk'] = Produk::first();
+    //     $data['detail_jual'] = DetailJual::first();
+    //     $data['penjualan'] = Penjualan::first();
+    //     $data['pengiriman'] = Pengiriman::first();
+    //     return view('pengiriman.transaksi', $data);
+    // }
     public function index(){
         $data['produk'] = Produk::all();
         $data['detail_jual'] = DetailJual::all();

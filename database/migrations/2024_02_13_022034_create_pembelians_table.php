@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pembelians', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_beli');
+            $table->text('tanggal_beli');
             $table->timestamps();
         });
     }

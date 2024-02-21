@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 class ProdukController extends Controller
 {
     public function index(){
+        // $data['kategori_produk'] = KategoriProduk::all();
         $data['produk'] = Produk::join('kategori_produks', 'kategori_produks.id', '=','produks.kategori_produk_id')
         ->join('diskon_produks', 'diskon_produks.id', '=', 'produks.diskon_produk_id')->get();
         return view('produk.produk',$data);

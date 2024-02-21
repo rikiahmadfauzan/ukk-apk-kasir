@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
+use App\Models\Produk;
 use Illuminate\Http\Request;
 
 class PelangganController extends Controller
 {
+    public function landing(){
+        $data['produk'] = Produk::all();
+        return view('pelanggan.landing',$data);
+    }
     public function index(){
         $data['pelanggan'] = Pelanggan::all();
         return view('pelanggan.data-pelanggan', $data);

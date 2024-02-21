@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DetailBeliController;
 use App\Http\Controllers\DetailJualController;
 use App\Http\Controllers\DiskonController;
 use App\Http\Controllers\KategoriProdukController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\PembelianController;
 use App\Http\Controllers\PenggunaController;
 use App\Http\Controllers\PengirimanController;
 use App\Http\Controllers\PenjualanController;
@@ -97,4 +99,21 @@ Route::get('/pengiriman',[PengirimanController::class,'index']);
 Route::post('/pengiriman/create',[PengirimanController::class,'create']);
 Route::post('/pengiriman/update/{id}',[PengirimanController::class,'update']);
 Route::get('/pengiriman/delete/{id}',[PengirimanController::class,'delete']);
+
+     //Detail Beli
+Route::get('/detail-beli',[DetailBeliController::class,'index']);
+Route::post('/detail-jual/create',[DetailBeliController::class,'create']);
+// Route::post('/detail/jual/update/{id}',[DetailBeliController::class,'update']);
+// Route::get('/detail-jual/delete/{id}',[DetailBeliController::class,'delete']);
+// Route::get('/transaksi/{id}',[DetailBeliController::class,'transaksi']);
+// Route::post('/transaksi/change/{id}',[DetailBeliController::class,'change']);
+
+     //Detail Beli
+Route::get('/pembelian',[PembelianController::class,'index']);
+Route::post('/pembelian/create',[PembelianController::class,'create']);
+Route::post('/pembelian/update/{id}',[PembelianController::class,'update']);
+Route::get('/pembelian/delete/{id}',[PembelianController::class,'delete']);
+
+    //Landing Page
+Route::get('/shop',[PelangganController::class,'landing']);
 
