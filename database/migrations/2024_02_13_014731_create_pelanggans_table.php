@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nama_pelanggan');
             $table->tinyText('alamat');
             $table->string('no_telpon');
-            // $table->unsignedBigInteger('user_id');
-            // $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

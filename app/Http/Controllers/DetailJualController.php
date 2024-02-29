@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DetailJual;
+use App\Models\KategoriProduk;
 use App\Models\Pelanggan;
 use App\Models\Pengiriman;
 use App\Models\Penjualan;
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 class DetailJualController extends Controller
 {
     public function transaksi(Request $request){
+        $data['kategori_produk'] = KategoriProduk::where('id', $request->id)->first();
         $data['produk'] = Produk::where('id', $request->id)->first();
         $data['pelanggan'] = Pelanggan::where('id', $request->id)->first();
         $data['detail_jual'] = DetailJual::where('id', $request->id)->first();

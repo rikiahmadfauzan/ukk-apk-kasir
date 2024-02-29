@@ -375,7 +375,7 @@
                                 DASHBOARDS
                             </li>
                             <li>
-                                <a href="index.html" class="side-menu__link side-menu__link--active ">
+                                <a href="/dashbord" class="side-menu__link side-menu__link--active ">
                                     <i data-tw-merge="" data-lucide="gauge-circle" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                     <div class="side-menu__link__title">E-Commerce</div>
                                 </a>
@@ -414,14 +414,6 @@
                                 ACCOUNT
                             </li>
                             <li>
-                                <a href="/penjualan" class="side-menu__link ">
-                                    <i data-tw-merge="" data-lucide="percent-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Penjualan</div>
-                                </a>
-                                <!-- BEGIN: Second Child -->
-                                <!-- END: Second Child -->
-                            </li>
-                            <li>
                                 <a href="/diskon" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="database-zap" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                     <div class="side-menu__link__title">Discount</div>
@@ -429,7 +421,15 @@
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
                             </li>
-                            <li class="side-menu__divider">
+                            <li>
+                                <a href="/kategori-produk" class="side-menu__link ">
+                                    <i data-tw-merge="" data-lucide="book-marked" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                    <div class="side-menu__link__title">Categories</div>
+                                </a>
+                                <!-- BEGIN: Second Child -->
+                                <!-- END: Second Child -->
+                            </li>
+                            {{-- <li class="side-menu__divider">
                                 Pembelian
                             </li>
                             <li>
@@ -447,18 +447,11 @@
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
-                            </li>
+                            </li> --}}
                             <li class="side-menu__divider">
                                 E-COMMERCE
                             </li>
-                            <li>
-                                <a href="/kategori-produk" class="side-menu__link ">
-                                    <i data-tw-merge="" data-lucide="book-marked" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Categories</div>
-                                </a>
-                                <!-- BEGIN: Second Child -->
-                                <!-- END: Second Child -->
-                            </li>
+
                             <li>
                                 <a class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="table2" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
@@ -492,11 +485,21 @@
                             <li>
                                 <a href="javascript:;" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="sigma-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Transactions</div>
+                                    <div class="side-menu__link__title">Penjualan</div>
                                     <i data-tw-merge="" data-lucide="chevron-down" class="stroke-[1] w-5 h-5 side-menu__link__chevron"></i>
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <ul class="hidden">
+                                    <li>
+                                        <a href="/penjualan" class="side-menu__link ">
+                                            <i data-tw-merge="" data-lucide="divide-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                                            <div class="side-menu__link__title">
+                                               Jual
+                                            </div>
+                                        </a>
+                                        <!-- BEGIN: Third Child -->
+                                        <!-- END: Third Child -->
+                                    </li>
                                     <li>
                                         <a href="/detail-jual" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="divide-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
@@ -507,7 +510,7 @@
                                         <!-- BEGIN: Third Child -->
                                         <!-- END: Third Child -->
                                     </li>
-                                    <li>
+                                    {{-- <li>
                                         <a href="/pengiriman" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="plus-square" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
@@ -526,33 +529,33 @@
                                         </a>
                                         <!-- BEGIN: Third Child -->
                                         <!-- END: Third Child -->
-                                    </li>
+                                    </li> --}}
                                 </ul>
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="" class="side-menu__link ">
+                                <a class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="file-archive" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Discount</div>
+                                    <div class="side-menu__link__title">Pembelian</div>
                                     <i data-tw-merge="" data-lucide="chevron-down" class="stroke-[1] w-5 h-5 side-menu__link__chevron"></i>
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <ul class="hidden">
                                     <li>
-                                        <a href="echo-seller-list.html" class="side-menu__link ">
+                                        <a href="/pembelian" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="file-image" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
-                                                Seller List
+                                                Beli
                                             </div>
                                         </a>
                                         <!-- BEGIN: Third Child -->
                                         <!-- END: Third Child -->
                                     </li>
                                     <li>
-                                        <a href="echo-seller-detail.html" class="side-menu__link ">
+                                        <a href="/detail-beli" class="side-menu__link ">
                                             <i data-tw-merge="" data-lucide="file-box" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                                             <div class="side-menu__link__title">
-                                                Seller Detail
+                                                Detail Beli
                                             </div>
                                         </a>
                                         <!-- BEGIN: Third Child -->
@@ -562,9 +565,9 @@
                                 <!-- END: Second Child -->
                             </li>
                             <li>
-                                <a href="echo-reviews.html" class="side-menu__link ">
+                                <a href="/pengiriman" class="side-menu__link ">
                                     <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                                    <div class="side-menu__link__title">Reviews</div>
+                                    <div class="side-menu__link__title">Pengiriman</div>
                                 </a>
                                 <!-- BEGIN: Second Child -->
                                 <!-- END: Second Child -->
@@ -1509,7 +1512,7 @@
                     </div>
                 </div>
             </div>
-           @yield('content')
+            @yield('content')
         </div>
         <!-- BEGIN: Vendor JS Assets-->
         <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/dom.js"></script>

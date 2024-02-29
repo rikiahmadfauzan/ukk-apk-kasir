@@ -16,14 +16,19 @@
                                 </div>
                             </div>
                             <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row lg:ml-auto">
-                                <button data-tw-merge=""
-                                    class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary group-[.mode--light]:!border-transparent group-[.mode--light]:!bg-white/[0.12] group-[.mode--light]:!text-slate-200"><i
-                                        data-tw-merge="" data-lucide="arrow-left" class="mr-3 h-4 w-4 stroke-[1.3]"></i>
-                                    Prev Order</button>
-                                <button data-tw-merge=""
-                                    class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary group-[.mode--light]:!border-transparent group-[.mode--light]:!bg-white/[0.12] group-[.mode--light]:!text-slate-200"><i
-                                        data-tw-merge="" data-lucide="arrow-right" class="mr-3 h-4 w-4 stroke-[1.3]"></i>
-                                    Next Order</button>
+                                <a href="/penjualan">
+                                    <button data-tw-merge=""
+                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary group-[.mode--light]:!border-transparent group-[.mode--light]:!bg-white/[0.12] group-[.mode--light]:!text-slate-200"><i
+                                            data-tw-merge="" data-lucide="arrow-left" class="mr-3 h-4 w-4 stroke-[1.3]"></i>
+                                        Prev Order</button>
+                                </a>
+                                <a href="/dashbord">
+                                    <button data-tw-merge=""
+                                        class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary group-[.mode--light]:!border-transparent group-[.mode--light]:!bg-white/[0.12] group-[.mode--light]:!text-slate-200"><i
+                                            data-tw-merge="" data-lucide="arrow-right"
+                                            class="mr-3 h-4 w-4 stroke-[1.3]"></i>
+                                        Next Order</button>
+                                </a>
                                 <button data-tw-merge=""
                                     class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary group-[.mode--light]:!border-transparent group-[.mode--light]:!bg-white/[0.12] group-[.mode--light]:!text-slate-200"><i
                                         data-tw-merge="" data-lucide="printer" class="mr-3 h-4 w-4 stroke-[1.3]"></i>
@@ -235,7 +240,7 @@
                                                         <div class="w-54 sm:mr-auto">Name:</div>
                                                         <a class="underline decoration-primary/30 decoration-dotted underline-offset-[3px]"
                                                             href="#">
-                                                            {{ $pelanggan->nama_pelanggan }}
+                                                            {{ $penjualan->pelanggan->nama_pelanggan }}
                                                         </a>
                                                     </div>
                                                 </div>
@@ -245,7 +250,7 @@
                                                     <div
                                                         class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
                                                         <div class="w-54 sm:mr-auto">Phone Number:</div>
-                                                        {{ $pelanggan->no_telpon }}
+                                                        {{ $penjualan->pelanggan->no_telpon }}
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center">
@@ -369,7 +374,7 @@
                                                                             class="mt-1 flex flex-col gap-0.5 whitespace-nowrap text-xs text-slate-500">
                                                                             Category
                                                                             :
-                                                                            {{-- {{ $detail_jual->produk->kategori_produ }} --}}
+                                                                            {{ $produk->kategori_produk->nama_kategori }}
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -386,7 +391,7 @@
                                                                     @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
                                                                         {{ $detail_jual->produk->diskon_produk->nilai_diskon }}%
                                                                     @elseif($detail_jual->produk->diskon_produk->jenis_diskon == 'nominal')
-                                                                        -{{ $detail_jual->produk->diskon_produk->nilai_diskon }}
+                                                                        -{{ number_format($detail_jual->produk->diskon_produk->nilai_diskon) }}
                                                                     @endif
                                                                 </div>
                                                             </td>
@@ -402,12 +407,21 @@
                                                 </table>
                                             </div>
                                             {{-- Mengitung --}}
-                                            @php
-                                                $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
-                                                $diskon = ($detail_jual->produk->diskon_produk->nilai_diskon / 100) * $detail_jual->harga_jual;
-                                                $biaya_pengiriman = $pengiriman->biaya_pengiriman;
-                                                $total = $subtotal + $biaya_pengiriman - $diskon;
-                                            @endphp
+                                            @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
+                                                @php
+                                                    $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
+                                                    $diskon = ($detail_jual->produk->diskon_produk->nilai_diskon / 100) * $detail_jual->jumlah_produk * $detail_jual->harga_jual;
+                                                    $biaya_pengiriman = $pengiriman->biaya_pengiriman;
+                                                    $total = $subtotal + $biaya_pengiriman - $diskon;
+                                                @endphp
+                                            @elseif($detail_jual->produk->diskon_produk->jenis_diskon == 'nominal')
+                                                @php
+                                                    $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
+                                                    $diskon = $detail_jual->produk->diskon_produk->nilai_diskon * $detail_jual->jumlah_produk;
+                                                    $biaya_pengiriman = $pengiriman->biaya_pengiriman;
+                                                    $total = $subtotal + $biaya_pengiriman - $diskon;
+                                                @endphp
+                                            @endif
                                             {{-- Mengitung --}}
 
                                             <div class="mb-5 ml-auto mt-3 flex flex-col gap-3.5 pr-5 text-right">

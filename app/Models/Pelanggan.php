@@ -11,12 +11,16 @@ class Pelanggan extends Model
     public function penjualan(){
         return $this->hasMany(Pelanggan::class, 'pelanggan_id');
     }
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
     protected $table = 'pelanggans';
     protected $primaryKey = 'id';
     protected $fillable = [
         'nama_pelanggan',
         'alamat',
         'no_telpon',
+        'user_id'
 
     ];
 }

@@ -44,7 +44,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <form action="/detail-jual/create" method="post">
+                                    <form action="/detail-beli/create" method="post">
                                         @csrf
                                         <div data-tw-merge class="p-5 grid grid-cols-12 gap-4 gap-y-3">
                                             <div class="col-span-12 sm:col-span-6">
@@ -52,7 +52,7 @@
                                                     class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
                                                     Nama Produk
                                                 </label>
-                                                <select name="pembelian_id" data-tw-merge id="modal-form-6"
+                                                <select name="produk_id" data-tw-merge id="modal-form-6"
                                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
                                                     @foreach ($produk as $item)
                                                         <option value="{{ $item->id }}">{{ $item->nama_produk }}
@@ -204,6 +204,15 @@
                                 </div>
                                 <div class="overflow-auto xl:overflow-visible">
                                     <table data-tw-merge="" class="w-full text-left border-b border-slate-200/60">
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $item)
+                                                        <li>{{ $item }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
                                         <thead data-tw-merge="" class="">
                                             <tr data-tw-merge="" class="">
                                                 <td data-tw-merge=""
@@ -212,18 +221,18 @@
                                                 </td>
                                                 <td data-tw-merge=""
                                                     class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Name Product
+                                                    Nama Produk
                                                 </td>
                                                 <td data-tw-merge=""
-                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
                                                     Harga Beli
                                                 </td>
                                                 <td data-tw-merge=""
-                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
                                                     Jumlah Beli
                                                 </td>
                                                 <td data-tw-merge=""
-                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
+                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
                                                     Tanggal Beli
                                                 </td>
                                                 <td data-tw-merge=""
@@ -245,18 +254,17 @@
                                                     </td>
                                                     <td data-tw-merge=""
                                                         class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                        {{ $item->harga_beli }}
+                                                        {{ number_format($item->harga_beli) }}
                                                     </td>
                                                     <td data-tw-merge=""
                                                         class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                        {{ $item->jumlah_beli }}
+                                                        {{  $item->jumlah_beli }}
                                                     </td>
-                                                    @if ($item->pembelian_id != null)
-                                                        <td data-tw-merge=""
-                                                            class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                            {{ $item->pembelian->tanggal_beli }}
-                                                        </td>
-                                                    @endif
+                                                    <td data-tw-merge=""
+                                                        class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
+                                                        {{  $item->pembelian->tanggal_beli }}
+                                                    </td>
+
                                                     <td data-tw-merge=""
                                                         class="px-5 border-b dark:border-darkmode-300 relative border-dashed py-4 dark:bg-darkmode-600">
                                                         <div class="flex items-center justify-center">
@@ -284,7 +292,7 @@
                                                                                 data-lucide="check-square"
                                                                                 class="stroke-[1] mr-2 h-4 w-4"></i>
                                                                             Edit</a>
-                                                                        <a href="/delete/kategori/{{ $item->id }}"
+                                                                        <a href="/detail-jual/delete/{{ $item->id }}"
                                                                             class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item text-danger"><i
                                                                                 data-tw-merge="" data-lucide="trash2"
                                                                                 class="stroke-[1] mr-2 h-4 w-4"></i>
@@ -304,7 +312,7 @@
                                                         <div
                                                             class="flex items-center px-5 py-3 border-b border-slate-200/60 dark:border-darkmode-400">
                                                             <h2 class="mr-auto text-base font-medium">
-                                                                Categories
+                                                                Detail Jual
                                                             </h2>
                                                             <div data-tw-merge data-tw-placement="bottom-end"
                                                                 class="dropdown relative sm:hidden"><button
@@ -324,36 +332,29 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <form action="/update/kategori/{{ $item->id }}"
+                                                        <form action="/detail/jual/update/{{ $item->id }}"
                                                             method="post">
                                                             @csrf
                                                             <div data-tw-merge class="p-5 grid grid-cols-12 gap-4 gap-y-3">
-                                                                {{-- <div class="col-span-12 sm:col-span-6">
+                                                                <div class="col-span-12 sm:col-span-6">
                                                                     <label data-tw-merge for="modal-form-1"
                                                                         class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
-                                                                        Nama Kategori
+                                                                        Jumlah Produk
                                                                     </label>
-                                                                    <input value="{{ $item->nama_kategori }}"
-                                                                        name="nama_kategori" data-tw-merge
+                                                                    <input value="{{ $item->jumlah_produk }}"
+                                                                        name="jumlah_produk" data-tw-merge
                                                                         id="modal-form-1" type="text"
                                                                         class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
-                                                                </div> --}}
-                                                                <div class="col-span-12 sm:col-span-12">
-                                                                    <label data-tw-merge for="modal-form-6"
+                                                                </div>
+                                                                <div class="col-span-12 sm:col-span-6">
+                                                                    <label data-tw-merge for="modal-form-1"
                                                                         class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
-                                                                        Status
+                                                                        Harga Jual
                                                                     </label>
-                                                                    <select name="status" data-tw-merge id="modal-form-6"
-                                                                        class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
-                                                                        @if ($item->status == 'active')
-                                                                            <option value="active" selected>Active</option>
-                                                                            <option value="inactive">Inactive</option>
-                                                                        @elseif ($item->status == 'inactive')
-                                                                            <option value="active">Active</option>
-                                                                            <option value="inactive" selected>Inactive
-                                                                            </option>
-                                                                        @endif
-                                                                    </select>
+                                                                    <input value="{{ $item->harga_jual }}"
+                                                                        name="harga_jual" data-tw-merge id="modal-form-1"
+                                                                        type="text"
+                                                                        class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
                                                                 </div>
                                                             </div>
                                                             <div
@@ -367,8 +368,9 @@
                                                         </form>
                                                     </div>
                                                 </div>
-                                                <!-- END: Modal Content -->
                                             @endforeach
+
+                                            <!-- END: Modal Content -->
                                         </tbody>
                                     </table>
                                 </div>

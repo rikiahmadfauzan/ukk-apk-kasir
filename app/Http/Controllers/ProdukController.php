@@ -10,9 +10,7 @@ use Illuminate\Http\Request;
 class ProdukController extends Controller
 {
     public function index(){
-        // $data['kategori_produk'] = KategoriProduk::all();
-        $data['produk'] = Produk::join('kategori_produks', 'kategori_produks.id', '=','produks.kategori_produk_id')
-        ->join('diskon_produks', 'diskon_produks.id', '=', 'produks.diskon_produk_id')->get();
+        $data['produk'] = Produk::all();
         return view('produk.produk',$data);
     }
     public function add(){
@@ -59,5 +57,16 @@ class ProdukController extends Controller
             'diskon_produk_id' => $request->diskon_produk_id
         ]);
         return redirect('/produk');
+    }
+
+    public function update(Request $request){
+        Produk::where('id', $request->id)->delete();
+        return redirect('/produk');
+
+    }
+    public function delete(Request $request){
+        Produk::where('id', $request->id)->delete();
+        return redirect('/produk');
+
     }
 }

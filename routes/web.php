@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('coba');
 });
         //Login Controller
 Route::get('/login',[LoginController::class,'login']);
@@ -52,6 +52,7 @@ Route::post('/pengguna/update/{id}',[UserController::class,'update']);
 Route::get('/pengguna/delete/{id}',[UserController::class,'delete']);
 
 });
+
     //Pelanggan
 Route::get('/pelanggan',[PelangganController::class,'index']);
 Route::get('/add-pelanggan',[PelangganController::class,'add']);
@@ -69,6 +70,9 @@ Route::get('/delete/kategori/{id}',[KategoriProdukController::class,'delete']);
 Route::get('/produk',[ProdukController::class,'index']);
 Route::get('/add-produk',[ProdukController::class,'add']);
 Route::post('/create/produk',[ProdukController::class,'create']);
+Route::post('/update/produk/{id}',[ProdukController::class,'update']);
+Route::get('/delete-produk/{id}',[ProdukController::class,'delete']);
+
 
     //Diskon
 Route::get('/diskon',[DiskonController::class,'index']);
@@ -89,6 +93,7 @@ Route::get('/detail-jual',[DetailJualController::class,'index']);
 Route::post('/detail-jual/create',[DetailJualController::class,'create']);
 Route::post('/detail/jual/update/{id}',[DetailJualController::class,'update']);
 Route::get('/detail-jual/delete/{id}',[DetailJualController::class,'delete']);
+    //transaksi
 Route::get('/transaksi/{id}',[DetailJualController::class,'transaksi']);
 Route::post('/transaksi/change/{id}',[DetailJualController::class,'change']);
 
@@ -100,19 +105,20 @@ Route::post('/pengiriman/create',[PengirimanController::class,'create']);
 Route::post('/pengiriman/update/{id}',[PengirimanController::class,'update']);
 Route::get('/pengiriman/delete/{id}',[PengirimanController::class,'delete']);
 
-     //Detail Beli
-Route::get('/detail-beli',[DetailBeliController::class,'index']);
-Route::post('/detail-jual/create',[DetailBeliController::class,'create']);
-// Route::post('/detail/jual/update/{id}',[DetailBeliController::class,'update']);
-// Route::get('/detail-jual/delete/{id}',[DetailBeliController::class,'delete']);
-// Route::get('/transaksi/{id}',[DetailBeliController::class,'transaksi']);
-// Route::post('/transaksi/change/{id}',[DetailBeliController::class,'change']);
 
-     //Detail Beli
+    //Pembelian
 Route::get('/pembelian',[PembelianController::class,'index']);
 Route::post('/pembelian/create',[PembelianController::class,'create']);
 Route::post('/pembelian/update/{id}',[PembelianController::class,'update']);
 Route::get('/pembelian/delete/{id}',[PembelianController::class,'delete']);
+
+    //Detail Beli
+Route::get('/detail-beli',[DetailBeliController::class,'index']);
+Route::post('/detail-beli/create',[DetailBeliController::class,'create']);
+Route::post('/detail/beli/update/{id}',[DetailBeliController::class,'update']);
+Route::get('/detail-beli/delete/{id}',[DetailBeliController::class,'delete']);
+// Route::get('/transaksi/{id}',[DetailBeliController::class,'transaksi']);
+// Route::post('/transaksi/change/{id}',[DetailBeliController::class,'change']);
 
     //Landing Page
 Route::get('/shop',[PelangganController::class,'landing']);

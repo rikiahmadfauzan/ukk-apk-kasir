@@ -1,133 +1,472 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html><!--
+    Template Name: Tailwise - Admin Dashboard Template
+    Author: Left4code
+    Website: http://www.left4code.com/
+    Contact: muhammadrizki@left4code.com
+    Purchase: https://themeforest.net/user/left4code/portfolio
+    Renew Support: https://themeforest.net/user/left4code/portfolio
+    License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+    -->
+    <html xmlns="http://www.w3.org/1999/xhtml" class="opacity-0" lang="en"><!-- BEGIN: Head -->
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="{{ asset('dashboard') }}/assets/images/logo.svg">
-    <title>Aplikasi Kasir</title>
-    {{-- data tabel --}}
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <!-- Simple bar CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/simplebar.css">
-    <!-- Fonts CSS -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <!-- Icons CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/feather.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/select2.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/dropzone.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/uppy.min.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/jquery.steps.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/jquery.timepicker.css">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/quill.snow.css">
-    <!-- Date Range Picker CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/daterangepicker.css">
-
-    <!-- App CSS -->
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/app-light.css" id="lightTheme">
-    <link rel="stylesheet" href="{{ asset('dashboard') }}/css/app-dark.css" id="darkTheme" disabled>
-
-    {{-- map --}}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-
-</head>
-
-<body>
-    {{-- <div class="hero" style="background-image: url('{{ asset('dashboard') }}/images/honda.jpg')"> --}}
-        <div class="container-scroller py-5">
-            <div class="row w-100 mx-0 py-5">
-                <div class="col-lg-4 mx-auto shadow">
-                    <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-                        <div class="brand-logo">
-                            {{-- <img src="{{ asset('dashboard') }}/images/logo.svg" alt="logo"> --}}
+    <!-- Mirrored from tailwise-html.vercel.app/echo-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Feb 2024 23:34:34 GMT -->
+    <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+    <head>
+        <meta charset="utf-8">
+        <meta name="csrf-token" content="VGo2c81dITdNLgFH1URSjEc88uEe5rNl9fMJX49O">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Tailwise admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
+        <meta name="keywords" content="admin template, Tailwise Admin Template, dashboard template, flat admin template, responsive admin template, web app">
+        <meta name="author" content="LEFT4CODE">
+        <title>Tailwise - Admin Dashboard Template</title>
+        <!-- BEGIN: CSS Assets-->
+        <link rel="stylesheet" href="{{ asset('vercel') }}/dist/css/vendors/tippy.css">
+        <link rel="stylesheet" href="{{ asset('vercel') }}/dist/css/app.css"> <!-- END: CSS Assets-->
+    </head>
+    <!-- END: Head -->
+    <body>
+        <div>
+            <div data-tw-backdrop="" aria-hidden="true" tabindex="-1" id="theme-switcher" class="modal group bg-gradient-to-b from-theme-1/50 via-theme-2/50 to-black/50 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 [&:not(.show)]:duration-[0s,0.2s] [&:not(.show)]:delay-[0.2s,0s] [&:not(.show)]:invisible [&:not(.show)]:opacity-0 [&.show]:visible [&.show]:opacity-100 [&.show]:duration-[0s,0.4s]">
+                <div data-tw-merge="" class="ml-auto h-screen flex flex-col bg-white relative shadow-md transition-[margin-right] duration-[0.6s] -mr-[100%] group-[.show]:mr-0 dark:bg-darkmode-600 sm:w-[460px] w-72 rounded-[0.75rem_0_0_0.75rem/1.1rem_0_0_1.1rem]"><a class="absolute inset-y-0 left-0 right-auto my-auto -ml-[60px] flex h-8 w-8 items-center justify-center rounded-full border border-white/90 bg-white/5 text-white/90 transition-all hover:rotate-180 hover:scale-105 hover:bg-white/10 focus:outline-none sm:-ml-[105px] sm:h-14 sm:w-14" data-tw-dismiss="modal" href="javascript:;">
+                        <i data-tw-merge="" data-lucide="x" class="stroke-[1] h-3 w-3 sm:h-8 sm:w-8"></i>
+                    </a>
+                    <div data-tw-merge="" class="overflow-y-auto flex-1 p-0">
+                        <div class="flex flex-col">
+                            <div class="px-8 pb-8 pt-6">
+                                <div class="text-base font-medium">Templates</div>
+                                <div class="mt-0.5 text-slate-500">Choose your templates</div>
+                                <div class="mt-5 grid grid-cols-2 gap-x-5 gap-y-3.5">
+                                    <div>
+                                        <a href="echo-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block border-2 border-theme-1/60">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/echo.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            echo
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="hurricane-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/hurricane.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            hurricane
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="ravage-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/ravage.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            ravage
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="hook-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/hook.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            hook
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="razor-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/razor.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            razor
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="havoc-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/havoc.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            havoc
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="dagger-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/dagger.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            dagger
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="shuriken-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/shuriken.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            shuriken
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="raze-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/raze.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            raze
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="exort-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/exort.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            exort
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <a href="viper-dashboard-overview-1.html" class="h-28 cursor-pointer bg-slate-50 box p-1 block">
+                                            <div class="h-full w-full overflow-hidden rounded-md">
+                                                <img class="h-full w-full" src="dist/images/themes/viper.png" alt="Tailwise - Admin Dashboard Template">
+                                            </div>
+                                        </a>
+                                        <div class="mt-2.5 text-center text-xs capitalize">
+                                            viper
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b border-dashed"></div>
+                            <div class="px-8 pb-8 pt-6">
+                                <div class="text-base font-medium">Color Schemes</div>
+                                <div class="mt-0.5 text-slate-500">
+                                    Choose your color schemes
+                                </div>
+                                <div class="mt-5 grid grid-cols-2 gap-x-4 gap-y-3.5 sm:grid-cols-4">
+                                    <div>
+                                        <a data-theme-color="default" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 default"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 default"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-1" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-1"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-1"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-2" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-2"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-2"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-3" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-3"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-3"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-4" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-4"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-4"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-5" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-5"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-5"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-6" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-6"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-6"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-7" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-7"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-7"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-8" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-8"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-8"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-9" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-9"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-9"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-10" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-10"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-10"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-11" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-11"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-11"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-12" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-12"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-12"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-13" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-13"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-13"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-14" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-14"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-14"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-15" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-15"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-15"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-16" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-16"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-16"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a data-theme-color="theme-17" class="h-12 cursor-pointer bg-slate-50 box rounded-full p-1 border-slate-300/80 block [&.active]:border-2 [&.active]:border-theme-1/60">
+                                            <div class="h-full overflow-hidden rounded-full">
+                                                <div class="-mx-2 flex h-full items-center gap-1">
+                                                    <div class="w-1/2 h-[140%] bg-theme-1 rotate-12 theme-17"></div>
+                                                    <div class="w-1/2 h-[140%] bg-theme-2 rotate-12 theme-17"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>Hello! let's get started</h4>
-                        <h6 class="font-weight-light">Sign up to continue.</h6>
-                        {{-- @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $item)
-                                        <li>{{ $item }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif --}}
-                        <form class="pt-3" action="/create/pelanggan" method="post">
-                            @csrf
-                            <div class="form-group mt-3">
-                                <input type="text" name="username" class="form-control form-control-lg" id="username"
-                                    placeholder="username">
-                            </div>
-                            <div class="form-group mt-3">
-                                <input type="password" name="password" class="form-control form-control-lg"
-                                    id="password" placeholder="Password">
-                            </div>
-                            <div class="mt-3">
-                                <button type="submit" class="btn btn-sm mb-3 btn-secondary col col-12">SIGN UP</button>
-                            </div>
-                            {{-- <div class="text-center mt-4 font-weight-light">
-                                Don't have an account? <a href="/register">Create</a>
-                            </div> --}}
-                        </form>
                     </div>
                 </div>
             </div>
-            <!-- content-wrapper ends -->
+            <div class="fixed bottom-0 right-0 z-50 mb-5 mr-5 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full bg-theme-1 text-white shadow-lg" data-tw-toggle="modal" data-tw-target="#theme-switcher">
+                <i data-tw-merge="" data-lucide="settings" class="stroke-[1] w-5 h-5 animate-spin"></i>
+            </div>
         </div>
-    {{-- </div> --}}
-    <!-- container-scroller -->
-       {{-- data table --}}
-       <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-       <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-       <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
-       <script>
-           new DataTable('#example');
-       </script>
-       {{-- end data table --}}
-       {{-- map --}}
-       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-           integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-       <script src="{{ asset('dashboard') }}/js/jquery.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/map.js"></script>
-       <script src="{{ asset('dashboard') }}/js/popper.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/moment.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/bootstrap.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/simplebar.min.js"></script>
-       <script src='{{ asset('dashboard') }}/js/daterangepicker.js'></script>
-       <script src='{{ asset('dashboard') }}/js/jquery.stickOnScroll.js'></script>
-       <script src="{{ asset('dashboard') }}/js/tinycolor-min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/config.js"></script>
-       <script src="{{ asset('dashboard') }}/js/d3.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/topojson.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/datamaps.all.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/datamaps-zoomto.js"></script>
-       <script src="{{ asset('dashboard') }}/js/datamaps.custom.js"></script>
-       <script src="{{ asset('dashboard') }}/js/Chart.min.js"></script>
-       <script>
-           /* defind global options */
-           Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
-           Chart.defaults.global.defaultFontColor = colors.mutedColor;
-       </script>
-       <script src="{{ asset('dashboard') }}/js/gauge.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/jquery.sparkline.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/apexcharts.min.js"></script>
-       <script src="{{ asset('dashboard') }}/js/apexcharts.custom.js"></script>
-       <script src='{{ asset('dashboard') }}/js/jquery.mask.min.js'></script>
-       <script src='{{ asset('dashboard') }}/js/select2.min.js'></script>
-       @stack('script')
-       <script src='{{ asset('dashboard') }}/js/jquery.steps.min.js'></script>
-       <script src='{{ asset('dashboard') }}/js/jquery.validate.min.js'></script>
-       <script src='{{ asset('dashboard') }}/js/jquery.timepicker.js'></script>
-       <script src='{{ asset('dashboard') }}/js/dropzone.min.js'></script>
-       <script src='{{ asset('dashboard') }}/js/uppy.min.js'></script>
-       <script src='{{ asset('dashboard') }}/js/quill.min.js'></script>
-       <script>
+        <div class="container grid grid-cols-12 px-5 py-10 sm:px-10 sm:py-14 md:px-36 lg:h-screen lg:max-w-[1550px] lg:py-0 lg:pl-14 lg:pr-12 xl:px-24 2xl:max-w-[1750px]">
+            <div class="relative z-50 h-full col-span-12 p-7 sm:p-14 bg-white rounded-2xl lg:bg-transparent lg:pr-10 lg:col-span-5 xl:pr-24 2xl:col-span-4 lg:p-0 before:content-[''] before:absolute before:inset-0 before:-mb-3.5 before:bg-white/40 before:rounded-2xl before:mx-5">
+                <div class="relative z-10 flex h-full w-full flex-col justify-center py-2 lg:py-32">
+                    <div class="flex h-[55px] w-[55px] items-center justify-center rounded-[0.8rem] border border-primary/30">
+                        <div class="relative flex h-[50px] w-[50px] items-center justify-center rounded-[0.6rem] bg-white bg-gradient-to-b from-theme-1/90 to-theme-2/90">
+                            <div class="relative h-[26px] w-[26px] -rotate-45 [&_div]:bg-white">
+                                <div class="absolute inset-y-0 left-0 my-auto h-[75%] w-[20%] rounded-full opacity-50"></div>
+                                <div class="absolute inset-0 m-auto h-[120%] w-[20%] rounded-full"></div>
+                                <div class="absolute inset-y-0 right-0 my-auto h-[75%] w-[20%] rounded-full opacity-50"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <div class="text-2xl font-medium">Sign Up</div>
+                        <div class="mt-2.5 text-slate-600">
+                            Already have an account?
+                            <a class="font-medium text-primary" href="#">
+                                Sign In
+                            </a>
+                        </div>
+                        <div class="mt-6">
+                            <label data-tw-merge="" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
+                                Name*
+                            </label>
+                            <input data-tw-merge="" type="text" placeholder="Denzel" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
+                            <label data-tw-merge="" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right mt-5">
+                                Userame*
+                            </label>
+                            <input data-tw-merge="" type="text" placeholder="Washington" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
+                            <label data-tw-merge="" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right mt-5">
+                                Email*
+                            </label>
+                            <input data-tw-merge="" type="text" placeholder="denzel.washington@left4code.com" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
+                            <label data-tw-merge="" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right mt-5">
+                                Password*
+                            </label>
+                            <input data-tw-merge="" type="password" placeholder="************" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
+                            {{-- <div class="mt-3.5 grid h-1.5 w-full grid-cols-12 gap-4">
+                                <div class="active col-span-3 h-full rounded border border-slate-400/20 bg-slate-400/30 [&.active]:border-theme-1/20 [&.active]:bg-theme-1/30">
+                                </div>
+                                <div class="active col-span-3 h-full rounded border border-slate-400/20 bg-slate-400/30 [&.active]:border-theme-1/20 [&.active]:bg-theme-1/30">
+                                </div>
+                                <div class="active col-span-3 h-full rounded border border-slate-400/20 bg-slate-400/30 [&.active]:border-theme-1/20 [&.active]:bg-theme-1/30">
+                                </div>
+                                <div class="col-span-3 h-full rounded border border-slate-400/20 bg-slate-400/30 [&.active]:border-theme-1/20 [&.active]:bg-theme-1/30">
+                                </div>
+                            </div>
+                            <a class="mt-3 block text-xs text-slate-500/80 sm:text-sm" href="#">
+                                What is a secure password?
+                            </a>
+                            <label data-tw-merge="" class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right mt-5">
+                                Password Confirmation*
+                            </label>
+                            <input data-tw-merge="" type="password" placeholder="************" class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
+                            <div class="mt-5 flex items-center text-xs text-slate-500 sm:text-sm">
+                                <input data-tw-merge="" type="checkbox" class="transition-all duration-100 ease-in-out shadow-sm border-slate-200 cursor-pointer rounded focus:ring-4 focus:ring-offset-0 focus:ring-primary focus:ring-opacity-20 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&[type='radio']]:checked:bg-primary [&[type='radio']]:checked:border-primary [&[type='radio']]:checked:border-opacity-10 [&[type='checkbox']]:checked:bg-primary [&[type='checkbox']]:checked:border-primary [&[type='checkbox']]:checked:border-opacity-10 [&:disabled:not(:checked)]:bg-slate-100 [&:disabled:not(:checked)]:cursor-not-allowed [&:disabled:not(:checked)]:dark:bg-darkmode-800/50 [&:disabled:checked]:opacity-70 [&:disabled:checked]:cursor-not-allowed [&:disabled:checked]:dark:bg-darkmode-800/50 mr-2 border" id="remember-me">
+                                <label class="cursor-pointer select-none" for="remember-me">
+                                    I agree to the Envato
+                                </label>
+                                <a class="ml-1 text-primary dark:text-slate-200" href="#">
+                                    Privacy Policy
+                                </a>
+                                .
+                            </div> --}}
+                            <div class="mt-5 text-center xl:mt-8 xl:text-left">
+                                <a href="/login">
+                                <button data-tw-merge="" class="transition duration-200 border shadow-sm inline-flex items-center justify-center px-3 font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed bg-primary border-primary text-white dark:border-primary rounded-full w-full bg-gradient-to-r from-theme-1/70 to-theme-2/70 py-3.5 xl:mr-3">Sign In</button>
+                                </a>
+                                <button type="submit" data-tw-merge="" class="transition duration-200 border shadow-sm inline-flex items-center justify-center px-3 font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed border-secondary text-slate-500 dark:border-darkmode-100/40 dark:text-slate-300 [&:hover:not(:disabled)]:bg-secondary/20 [&:hover:not(:disabled)]:dark:bg-darkmode-100/10 rounded-full mt-3 w-full bg-white/70 py-3.5">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container fixed inset-0 grid h-screen w-screen grid-cols-12 pl-14 pr-12 lg:max-w-[1550px] xl:px-24 2xl:max-w-[1750px]">
+            <div class="relative h-screen col-span-12 lg:col-span-5 2xl:col-span-4 z-20 after:bg-white after:hidden after:lg:block after:content-[''] after:absolute after:right-0 after:inset-y-0 after:bg-gradient-to-b after:from-white after:to-slate-100/80 after:w-[800%] after:rounded-[0_1.2rem_1.2rem_0/0_1.7rem_1.7rem_0] before:content-[''] before:hidden before:lg:block before:absolute before:right-0 before:inset-y-0 before:my-6 before:bg-gradient-to-b before:from-white/10 before:to-slate-50/10 before:bg-white/50 before:w-[800%] before:-mr-4 before:rounded-[0_1.2rem_1.2rem_0/0_1.7rem_1.7rem_0]"></div>
+            <div class="h-full col-span-7 2xl:col-span-8 lg:relative before:content-[''] before:absolute before:lg:-ml-10 before:left-0 before:inset-y-0 before:bg-gradient-to-b before:from-theme-1 before:to-theme-2 before:w-screen before:lg:w-[800%] after:content-[''] after:absolute after:inset-y-0 after:left-0 after:w-screen after:lg:w-[800%] after:bg-texture-white after:bg-fixed after:bg-center after:lg:bg-[25rem_-25rem] after:bg-no-repeat">
+                <div class="sticky top-0 z-10 ml-16 hidden h-screen flex-col justify-center lg:flex xl:ml-28 2xl:ml-36">
+                    <div class="text-[2.6rem] font-medium leading-[1.4] text-white xl:text-5xl xl:leading-[1.2]">
+                        Embrace Excellence <br> in Dashboard Development
+                    </div>
+                    <div class="mt-5 text-base leading-relaxed text-white/70 xl:text-lg">
+                        Unlock the potential of Tailwise, where developers craft
+                        meticulously structured, visually stunning dashboards with
+                        feature-rich modules. Join us today to shape the future of your
+                        application development.
+                    </div>
+                    <div class="mt-10 flex flex-col gap-3 xl:flex-row xl:items-center">
+                        {{-- <div class="flex items-center">
+                            <div class="image-fit zoom-in h-9 w-9 2xl:h-11 2xl:w-11">
+                                <img data-placement="top" title="Denzel Washington" src="dist/images/users/user9-50x50.jpg" alt="Tailwise - Admin Dashboard Template" class="tooltip cursor-pointer rounded-full border-[3px] border-white/50">
+                            </div>
+                            <div class="image-fit zoom-in -ml-3 h-9 w-9 2xl:h-11 2xl:w-11">
+                                <img data-placement="top" title="Cate Blanchett" src="dist/images/users/user8-50x50.jpg" alt="Tailwise - Admin Dashboard Template" class="tooltip cursor-pointer rounded-full border-[3px] border-white/50">
+                            </div>
+                            <div class="image-fit zoom-in -ml-3 h-9 w-9 2xl:h-11 2xl:w-11">
+                                <img data-placement="top" title="Meryl Streep" src="dist/images/users/user2-50x50.jpg" alt="Tailwise - Admin Dashboard Template" class="tooltip cursor-pointer rounded-full border-[3px] border-white/50">
+                            </div>
+                            <div class="image-fit zoom-in -ml-3 h-9 w-9 2xl:h-11 2xl:w-11">
+                                <img data-placement="top" title="Angelina Jolie" src="dist/images/users/user4-50x50.jpg" alt="Tailwise - Admin Dashboard Template" class="tooltip cursor-pointer rounded-full border-[3px] border-white/50">
+                            </div>
+                        </div> --}}
+                        <div class="text-base text-white/70 xl:ml-2 2xl:ml-3">
+                            Over 7k+ strong and growing! Your journey begins here.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BEGIN: Vendor JS Assets-->
+        <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/dom.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/tailwind-merge.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/tippy.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/lucide.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/vendors/modal.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/components/base/theme-color.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/components/base/tippy.js"></script>
+        <script type="module" src="{{ asset('vercel') }}/dist/js/components/base/lucide.js"></script> <!-- END: Vendor JS Assets-->
+        <!-- BEGIN: Pages, layouts, components JS Assets-->
+        <!-- END: Pages, layouts, components JS Assets-->
+    </body>
 
-</body>
-
-</html>
+    <!-- Mirrored from tailwise-html.vercel.app/echo-register.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Feb 2024 23:34:34 GMT -->
+    </html>

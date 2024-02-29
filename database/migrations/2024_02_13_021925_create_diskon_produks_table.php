@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('diskon_produks', function (Blueprint $table) {
             $table->id();
             $table->string('nama_diskon');
-            $table->enum('jenis_diskon', ['persentase', 'nominal']);
+            $table->enum('jenis_diskon', ['persentase', 'nominal', 'no']);
             $table->integer('nilai_diskon');
             $table->string('deskripsi');
             $table->text('berlaku_mulai');

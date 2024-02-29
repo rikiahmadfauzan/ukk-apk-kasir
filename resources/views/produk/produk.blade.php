@@ -98,9 +98,17 @@
                                                     <div class="ml-auto">
                                                         <div class="flex items-center rounded-md border border-success/10 bg-success/10 px-1.5 py-px text-xs font-medium text-success">
                                                             <span class="-mt-px">
-                                                               {{$item->nama_kategori}}
+                                                               {{$item->kategori_produk->nama_kategori}}
                                                             </span>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <div class="text-slate-500">Stok:</div>
+                                                    <div class="ml-auto">
+                                                            <span class="-mt-px">
+                                                               {{$item->stok}}
+                                                            </span>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center">
@@ -108,10 +116,10 @@
                                                     <div class="ml-auto">
                                                         <div class="flex items-center">
                                                             <div class="flex items-center">
-                                                                @if ($item->jenis_diskon == 'persentase')
-                                                                {{ $item->nilai_diskon }}%
-                                                                @elseif ($item->jenis_diskon == 'nominal')
-                                                               - {{ $item->nilai_diskon }}
+                                                                @if ($item->diskon_produk->jenis_diskon == 'persentase')
+                                                                {{ $item->diskon_produk->nilai_diskon }}%
+                                                                @elseif ($item->diskon_produk->jenis_diskon == 'nominal')
+                                                               - {{ $item->diskon_produk->nilai_diskon }}
                                                                 @endif
                                                             </div>
                                                         </div>
@@ -135,7 +143,7 @@
                                                     <i data-tw-merge="" data-lucide="check-square" class="mr-1.5 h-4 w-4 stroke-[1.3]"></i>
                                                     Edit
                                                 </a>
-                                                <a class="flex items-center text-danger" href="#">
+                                                <a class="flex items-center text-danger" href="/delete-produk/{{ $item->id }}">
                                                     <i data-tw-merge="" data-lucide="trash2" class="mr-1.5 h-4 w-4 stroke-[1.3]"></i>
                                                     Delete
                                                 </a>
