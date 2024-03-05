@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('penjualans', function (Blueprint $table) {
             $table->id();
             $table->string('kode_penjualan');
-            $table->text('tanggal_jual');
-            $table->enum('metode_pembayaran', ['cod', 'debit', 'cash']);
-            $table->unsignedBigInteger('pelanggan_id');
+            $table->date('tanggal_jual');
+            $table->enum('metode_pembayaran', ['debit', 'cash'])->default('cash');
+            $table->unsignedBigInteger('pelanggan_id')->nullable();
             $table->foreign('pelanggan_id')->references('id')->on('pelanggans')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });

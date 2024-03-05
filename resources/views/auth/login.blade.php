@@ -22,7 +22,7 @@
     <meta name="keywords"
         content="admin template, Tailwise Admin Template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="LEFT4CODE">
-    <title>Tailwise - Admin Dashboard Template</title>
+    <title>Aplikasi Kasir</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('vercel') }}/dist/css/vendors/tippy.css">
     <link rel="stylesheet" href="{{ asset('vercel') }}/dist/css/app.css"> <!-- END: CSS Assets-->
@@ -413,7 +413,16 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="mt-10">
+                    @if ($errors->any())
+                    <ul>
+                    @foreach ($errors->all() as $item)
+                        <li class="alert alert-danger">{{ $item }}</li>
+                    @endforeach
+                   </ul>
+
+                    @endif
                     <div class="text-2xl font-medium">Sign In</div>
                     {{-- <div class="mt-2.5 text-slate-600">
                         Don't have an account?
@@ -440,7 +449,7 @@
                                 class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
                                 Email*Username
                             </label>
-                            <input data-tw-merge="" name="akun" type="text" placeholder="jhon/jhon@xample.com"
+                            <input data-tw-merge="" name="akun" type="text" placeholder="jhon"
                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 block rounded-[0.6rem] border-slate-300/80 px-4 py-3.5">
                             <label data-tw-merge=""
                                 class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right mt-4">
@@ -480,13 +489,10 @@
             class="h-full col-span-7 2xl:col-span-8 lg:relative before:content-[''] before:absolute before:lg:-ml-10 before:left-0 before:inset-y-0 before:bg-gradient-to-b before:from-theme-1 before:to-theme-2 before:w-screen before:lg:w-[800%] after:content-[''] after:absolute after:inset-y-0 after:left-0 after:w-screen after:lg:w-[800%] after:bg-texture-white after:bg-fixed after:bg-center after:lg:bg-[25rem_-25rem] after:bg-no-repeat">
             <div class="sticky top-0 z-10 flex-col justify-center hidden h-screen ml-16 lg:flex xl:ml-28 2xl:ml-36">
                 <div class="text-[2.6rem] font-medium leading-[1.4] text-white xl:text-5xl xl:leading-[1.2]">
-                    Embrace Excellence <br> in Dashboard Development
+                    Aplikasi Kasir <br>
                 </div>
                 <div class="mt-5 text-base leading-relaxed text-white/70 xl:text-lg">
-                    Unlock the potential of Tailwise, where developers craft
-                    meticulously structured, visually stunning dashboards with
-                    feature-rich modules. Join us today to shape the future of your
-                    application development.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus similique amet, nihil non quisquam asperiores odio nemo.
                 </div>
                 <div class="flex flex-col gap-3 mt-10 xl:flex-row xl:items-center">
                     {{-- <div class="flex items-center">
@@ -512,7 +518,7 @@
                         </div>
                     </div> --}}
                     <div class="text-base text-white/70 xl:ml-2 2xl:ml-3">
-                        Over 7k+ strong and growing! Your journey begins here.
+                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, suscipit!
                     </div>
                 </div>
             </div>

@@ -36,8 +36,9 @@ class LoginController extends Controller
 
                 return redirect('/home');
             }
+            
         }
-        return redirect()->back();
+        return redirect()->back()->withErrors('Login Anda Gagal!');
 
     }
 

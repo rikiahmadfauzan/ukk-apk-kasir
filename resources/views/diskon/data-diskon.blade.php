@@ -25,7 +25,7 @@
                                     <div
                                         class="flex items-center px-5 py-3 border-b border-slate-200/60 dark:border-darkmode-400">
                                         <h2 class="mr-auto text-base font-medium">
-                                            Discount
+                                            Diskon
                                         </h2>
                                         <div data-tw-merge data-tw-placement="bottom-end"
                                             class="dropdown relative sm:hidden"><button data-tw-toggle="dropdown"

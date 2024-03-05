@@ -20,7 +20,7 @@ class PengirimanController extends Controller
     // }
     public function index(){
         $data['penjualan'] = Penjualan::all();
-        $data['pengiriman'] = Pengiriman::all();
+        // $data['detail_jual'] = DetailJual::all();
         return view('pengiriman.pengiriman', $data);
     }
 

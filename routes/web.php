@@ -14,6 +14,7 @@ use App\Http\Controllers\PenjualanController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,7 +52,6 @@ Route::post('/pengguna/create',[UserController::class,'create']);
 Route::post('/pengguna/update/{id}',[UserController::class,'update']);
 Route::get('/pengguna/delete/{id}',[UserController::class,'delete']);
 
-});
 
     //Pelanggan
 Route::get('/pelanggan',[PelangganController::class,'index']);
@@ -93,10 +93,6 @@ Route::get('/detail-jual',[DetailJualController::class,'index']);
 Route::post('/detail-jual/create',[DetailJualController::class,'create']);
 Route::post('/detail/jual/update/{id}',[DetailJualController::class,'update']);
 Route::get('/detail-jual/delete/{id}',[DetailJualController::class,'delete']);
-    //transaksi
-Route::get('/transaksi/{id}',[DetailJualController::class,'transaksi']);
-Route::post('/transaksi/change/{id}',[DetailJualController::class,'change']);
-
 
     //Pengiriman
 Route::get('/transaksi',[PengirimanController::class,'transaksi']);
@@ -120,6 +116,30 @@ Route::get('/detail-beli/delete/{id}',[DetailBeliController::class,'delete']);
 // Route::get('/transaksi/{id}',[DetailBeliController::class,'transaksi']);
 // Route::post('/transaksi/change/{id}',[DetailBeliController::class,'change']);
 
+    //transaksi
+Route::get('/transaksi/{penjualan_id}',[DetailJualController::class,'transaksi']);
+Route::post('/transaksi/change/{id}',[DetailJualController::class,'change']);
+
+
     //Landing Page
 Route::get('/shop',[PelangganController::class,'landing']);
 
+Route::get('/produk/petugas',[PetugasController::class,'produk']);
+Route::get('/edit/produk/{id}',[PetugasController::class,'edit']);
+
+});
+
+// Route::get('/clear', [DetailJualController::class, 'clearCart']);
+// Route::get('/cart', [DetailJualController::class, 'index'])->name('cart.index');
+// Route::get('/add-to-cart/{id}', [DetailJualController::class, 'addToCart'])->name('cart.add');
+// Route::post('/cart/checkout', [DetailJualController::class, 'checkout'])->name('cart.checkout');
+
+Route::controller(CartController::class)->group(function(){
+    Route::get('/cart', 'index');
+    Route::get('/add-to-cart/{id}', 'addToCart');
+    Route::delete('/remove-from-cart', 'removeCartItem');
+    Route::get('/clear-cart', 'clearCart');
+
+
+    Route::post('/checkout', 'checkout');
+});

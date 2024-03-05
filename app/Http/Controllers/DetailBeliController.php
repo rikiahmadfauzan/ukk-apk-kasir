@@ -16,12 +16,14 @@ class DetailBeliController extends Controller
         return view('detail-beli.detai-beli', $data);
     }
     public function create(Request $request){
+
         $credentials = $request->validate([
             'harga_beli' => 'required',
             'jumlah_beli' => 'required',
             'pembelian_id' => 'required',
             'produk_id' => 'required',
         ]);
+
 
         DetailBeli::create($credentials);
 

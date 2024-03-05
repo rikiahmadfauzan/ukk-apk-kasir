@@ -29,7 +29,7 @@ class UserController extends Controller
             'username' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'level' => 'required',
+            // 'level' => 'required',
         ]);
        User::create($credentials);
         return redirect('/pengguna');
@@ -39,7 +39,7 @@ class UserController extends Controller
             'name' => 'required',
             'username' => 'required',
             'email' => 'required',
-            'level' => 'required',
+            // 'level' => 'required',
         ]);
       User::where('id', $request->id)->update($credentials);
         return redirect('/pengguna');

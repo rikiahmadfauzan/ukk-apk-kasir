@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\DiskonProduk;
+use App\Models\KategoriProduk;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -35,5 +37,28 @@ class DatabaseSeeder extends Seeder
         'password' => bcrypt('password'),
         'level' => 'petugas'
      ]);
+
+    //  KategoriProduk::create([
+    //     'nama_kategori' => 'Elektronik',
+    //     'status' => 'active'
+    //  ]);
+
+    //  DiskonProduk::create([
+    //     'nama_diskon' => '12,12',
+    //     'jenis_diskon' => 'persentase',
+    //     'nilai_diskon' => 50,
+    //     'deskripsi' => 'lorem ipum',
+    //     'berlaku_mulai' => '2024-03-05',
+    //     'berlaku_selesai' => '2024-03-09',
+    //  ]);
+
+    //  DiskonProduk::create([
+    //     'nama_diskon' => '12,12',
+    //     'jenis_diskon' => 'persentase',
+    //     'nilai_diskon' => 50,
+    //     'deskripsi' => 'lorem ipum',
+    //     'berlaku_mulai' => '2024-03-05',
+    //     'berlaku_selesai' => '2024-03-09',
+    //  ]);
     }
 }

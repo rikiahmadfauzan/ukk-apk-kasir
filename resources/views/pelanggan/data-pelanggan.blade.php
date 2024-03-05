@@ -61,13 +61,13 @@
                                                 class="inline-block mb-2 group-[.form-inline]:mb-2 group-[.form-inline]:sm:mb-0 group-[.form-inline]:sm:mr-5 group-[.form-inline]:sm:text-right">
                                                 Username
                                             </label>
-                                            <select name="user_id" data-tw-merge id="modal-form-6"
+                                            {{-- <select name="user_id" data-tw-merge id="modal-form-6"
                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
                                                 @foreach ($user as $item)
                                                     <option value="{{ $item->id }}">{{ $item->username }}
                                                     </option>
                                                 @endforeach
-                                            </select>
+                                            </select> --}}
                                         </div>
                                         <div class="col-span-12 sm:col-span-12">
                                             <label data-tw-merge for="modal-form-1"
@@ -156,17 +156,14 @@
                                                     Nama
                                                 </td>
                                                 <td data-tw-merge=""
-                                                    class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    Username
-                                                </td>
+                                                class="px-5 border-b dark:border-darkmode-300 w-52 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
+                                                No Telpon
+                                            </td>
                                                 <td data-tw-merge=""
                                                     class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
                                                     Alamat
                                                 </td>
-                                                <td data-tw-merge=""
-                                                    class="px-5 border-b dark:border-darkmode-300 w-52 border-t border-slate-200/60 bg-slate-50 py-4 font-medium text-slate-500">
-                                                    No Telpon
-                                                </td>
+
                                                 {{-- <td data-tw-merge="" class="px-5 border-b dark:border-darkmode-300 border-t border-slate-200/60 bg-slate-50 py-4 text-center font-medium text-slate-500">
                                                     Status
                                                 </td> --}}
@@ -199,15 +196,6 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </td>
-                                                    <td data-tw-merge=""
-                                                        class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">
-                                                        <a class="whitespace-nowrap font-medium" href="#">
-                                                            {{ $item->user->username }}
-                                                        </a>
-                                                        {{-- <div class="mt-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                        Support Team
-                                                        </div> --}}
                                                     </td>
                                                     <td data-tw-merge=""
                                                         class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 dark:bg-darkmode-600">

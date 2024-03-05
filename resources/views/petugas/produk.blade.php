@@ -87,7 +87,7 @@
                                                     {{ $item->nama_produk }}
                                                 </a>
                                                 <span class="mt-3 text-xs text-white/80">
-                                                    Rp{{ number_format($item->harga) }}
+                                                    ${{ number_format($item->harga) }}
                                                 </span>
                                             </div>
                                         </div>
@@ -116,11 +116,11 @@
                                                     <div class="ml-auto">
                                                         <div class="flex items-center">
                                                             <div class="flex items-center">
-                                                                {{-- @if ($item->diskon_produk->jenis_diskon == 'persentase')
+                                                                @if ($item->diskon_produk->jenis_diskon == 'persentase')
                                                                 {{ $item->diskon_produk->nilai_diskon }}%
                                                                 @elseif ($item->diskon_produk->jenis_diskon == 'nominal')
                                                                - {{ $item->diskon_produk->nilai_diskon }}
-                                                                @endif --}}
+                                                                @endif
                                                             </div>
                                                         </div>
                                                     </div>
@@ -135,15 +135,15 @@
                                                 </div> --}}
                                             </div>
                                             <div class="flex items-center">
-                                                {{-- <a class="mr-auto flex items-center text-primary" href="#">
+                                                <a class="mr-auto flex items-center text-primary" href="#">
                                                     <i data-tw-merge="" data-lucide="kanban-square" class="mr-1.5 h-4 w-4 stroke-[1.3]"></i>
                                                     Preview
-                                                </a> --}}
-                                                <a class="mr-3 flex items-center" href="#">
+                                                </a>
+                                                <a class="mr-3 flex items-center" href="/edit/produk/{{ $item->id }}">
                                                     <i data-tw-merge="" data-lucide="check-square" class="mr-1.5 h-4 w-4 stroke-[1.3]"></i>
                                                     Edit
                                                 </a>
-                                                <a class="flex items-center text-danger" href="/delete-produk/{{ $item->id }}">
+                                                <a class="flex items-center text-danger" href="/delete-produk/{{ $item->id }}" onclick="confirm('Apakah anda yakin akan menghapus produk ini ?')">
                                                     <i data-tw-merge="" data-lucide="trash2" class="mr-1.5 h-4 w-4 stroke-[1.3]"></i>
                                                     Delete
                                                 </a>

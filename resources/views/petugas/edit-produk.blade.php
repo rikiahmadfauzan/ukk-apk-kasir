@@ -35,6 +35,11 @@
                                                 </div>
                                             @endif
                                             <div class="mt-5">
+                                                @if ($errors->any())
+                                                @foreach ($errors->all() as $item)
+                                                <li class="alert alert-danger">{{ $item }}</li>
+                                                @endforeach
+                                                @endif
                                                 <div
                                                     class="flex-col block pt-5 mt-5 first:mt-0 first:pt-0 sm:flex xl:flex-row xl:items-center">
                                                     <div
@@ -55,7 +60,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex-1 w-full mt-3 xl:mt-0">
-                                                        <input name="nama_produk" data-tw-merge="" type="text"
+                                                        <input readonly value="{{ $produk->nama_produk }}" name="nama_produk" data-tw-merge="" type="text"
                                                             placeholder="Product name"
                                                             class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
                                                     </div>
@@ -87,7 +92,7 @@
                                                                     class="py-2 px-3 bg-slate-100 border shadow-sm border-slate-200 text-slate-600 dark:bg-darkmode-900/20 dark:border-darkmode-900/20 dark:text-slate-400 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r">
                                                                     $
                                                                 </div>
-                                                                <input name="harga" data-tw-merge="" type="number"
+                                                                <input readonly value="{{ $produk->harga }}" name="harga" data-tw-merge="" type="number"
                                                                     placeholder="Price"
                                                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
                                                             </div>
@@ -95,14 +100,16 @@
                                                                 <select name="diskon_produk_id" data-tw-merge=""
                                                                     id="category"
                                                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
+                                                                    {{-- <optgroup> --}}
                                                                         @foreach ($diskon as $item)
                                                                             <option value="{{ $item->id }}">
                                                                                 {{ $item->nama_diskon }}</option>
                                                                         @endforeach
+                                                                    {{-- </optgroup> --}}
                                                                 </select>
                                                             </div>
                                                             <div data-tw-merge="" class="flex group input-group">
-                                                                <input name="stok" data-tw-merge="" type="number"
+                                                                <input readonly value="{{ $produk->stok }}" name="stok" data-tw-merge="" type="number"
                                                                     placeholder="Stok"
                                                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10">
                                                             </div>
@@ -112,7 +119,7 @@
                                                                     <i data-tw-merge data-lucide="calendar"
                                                                         class="stroke-[1] w-5 h-5 h-4 w-4 h-4 w-4"></i>
                                                                 </div>
-                                                                <input name="tanggal_kadaluarsa" data-tw-merge
+                                                                <input value="{{ $produk->tanggal_kadaluarsa }}" name="tanggal_kadaluarsa" data-tw-merge
                                                                     type="text" data-single-mode="true"
                                                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&amp;[readonly]]:bg-slate-100 [&amp;[readonly]]:cursor-not-allowed [&amp;[readonly]]:dark:bg-darkmode-800/50 [&amp;[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&amp;:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker pl-12 pl-12 datepicker pl-12 pl-12">
                                                             </div>
@@ -141,10 +148,10 @@
                                                     </div>
 
                                                     <div class="flex-1 w-full mt-3 xl:mt-0">
-                                                        <select name="kategori_produk_id" data-tw-merge="" id="category"
+                                                        <select readonly name="kategori_produk_id" data-tw-merge="" id="category"
                                                             class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1">
                                                             @foreach ($kategori_produk as $item)
-                                                                <option value="{{ $item->id }}">
+                                                                <option readonly value="{{ $item->id }}">
                                                                     {{ $item->nama_kategori }}</option>
                                                             @endforeach
                                                         </select>
@@ -173,19 +180,15 @@
                                                             </div>
                                                         </div>
                                                         <div class="flex-1 w-full mt-3 xl:mt-0">
-                                                            <div
-                                                                class="border border-dashed rounded-md border-slate-300/80">
-                                                                <div
-                                                                    class="relative flex items-center justify-center px-4 pb-4 mt-5 cursor-pointer">
-                                                                    <i data-tw-merge="" data-lucide="image"
-                                                                        class="stroke-[1] w-4 h-4 mr-2"></i>
-                                                                    <span class="mr-1 text-primary">
-                                                                        Upload a file
-                                                                    </span>
-                                                                    or drag and drop
-                                                                    <input name="gambar_produk" data-tw-merge=""
-                                                                        id="horizontal-form-1" type="file"
-                                                                        class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 absolute top-0 left-0 h-full opacity-0">
+                                                            <div class="mt-3.5 grid grid-cols-12 gap-x-6 gap-y-10">
+                                                                <div class="flex flex-col col-span-12 gap-x-6 gap-y-10 md:col-span-12 xl:col-span-12">
+                                                                    <div class="p-5 box box--stacked">
+                                                                        @if (file_exists('storage/' . $produk->gambar_produk))
+                                            <img class="rounded-md" src="/storage/{{ $produk->gambar_produk }}" alt="Tailwise - Admin Dashboard Template">
+                                                                        <div class="h-48 overflow-hidden rounded-lg image-fit before:absolute before:left-0 before:top-0 before:z-10 before:block before:h-full before:w-full before:bg-gradient-to-t before:from-theme-1/60 before:to-theme-2/5">
+                                                                        @endif
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>

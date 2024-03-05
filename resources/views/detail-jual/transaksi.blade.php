@@ -51,17 +51,11 @@
                                                         class="mr-2.5 h-4 w-4 stroke-[1.3] text-slate-500"></i>
                                                     <div
                                                         class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
-                                                        <div class="w-54 sm:mr-auto">Tanggal Jual:</div>
-                                                        {{ $penjualan->tanggal_jual }}
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center">
-                                                    <i data-tw-merge="" data-lucide="truck"
-                                                        class="mr-2.5 h-4 w-4 stroke-[1.3] text-slate-500"></i>
-                                                    <div
-                                                        class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
-                                                        <div class="w-54 sm:mr-auto">Tanggal Pengiriman:</div>
-                                                        {{ $pengiriman->tanggal_pengiriman }}
+                                                        <div class="w-54 sm:mr-auto">Name:</div>
+                                                        <a class="underline decoration-primary/30 decoration-dotted underline-offset-[3px]"
+                                                            href="#">
+                                                            {{ $penjualan->pelanggan->nama_pelanggan }}
+                                                        </a>
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center">
@@ -75,7 +69,8 @@
                                                         <div
                                                             class="mr-auto flex items-center rounded-md border border-success/10 bg-success/10 px-1.5 py-px text-xs font-medium text-success sm:mr-0">
                                                             <span class="-mt-px">
-                                                                {{ $pengiriman->status_pengiriman }}
+                                                                {{-- {{ $pengiriman->status_pengiriman }} --}}
+                                                                Selesai
                                                             </span>
                                                         </div>
                                                     </div>
@@ -89,7 +84,16 @@
                                                         {{ $penjualan->metode_pembayaran }}
                                                     </div>
                                                 </div>
-                                                <div class="mt-1.5">
+                                                <div class="flex items-center">
+                                                    <i data-tw-merge="" data-lucide="clipboard"
+                                                        class="mr-2.5 h-4 w-4 stroke-[1.3] text-slate-500"></i>
+                                                    <div
+                                                        class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
+                                                        <div class="w-54 sm:mr-auto">Tanggal Jual:</div>
+                                                        {{ $penjualan->tanggal_jual }}
+                                                    </div>
+                                                </div>
+                                                {{-- <div class="mt-1.5">
                                                     <button data-tw-toggle="modal"
                                                         data-tw-target="#header-footer-modal-edit{{ $pengiriman->id }}"
                                                         data-tw-merge=""
@@ -97,9 +101,9 @@
                                                             data-tw-merge="" data-lucide="pen-square"
                                                             class="mr-2 h-4 w-4 stroke-[1.3]"></i>
                                                         Change Status</button>
-                                                </div>
+                                                </div> --}}
                                                 <!-- BEGIN: Modal Content -->
-                                                <div data-tw-backdrop="" aria-hidden="true" tabindex="-1"
+                                                {{-- <div data-tw-backdrop="" aria-hidden="true" tabindex="-1"
                                                     id="header-footer-modal-edit{{ $pengiriman->id }}"
                                                     class="modal group bg-gradient-to-b from-theme-1/50 via-theme-2/50 to-black/50 transition-[visibility,opacity] w-screen h-screen fixed left-0 top-0 [&amp;:not(.show)]:duration-[0s,0.2s] [&amp;:not(.show)]:delay-[0.2s,0s] [&amp;:not(.show)]:invisible [&amp;:not(.show)]:opacity-0 [&amp;.show]:visible [&amp;.show]:opacity-100 [&amp;.show]:duration-[0s,0.4s]">
                                                     <div data-tw-merge
@@ -175,11 +179,11 @@
                                                             </div>
                                                         </form>
                                                     </div>
-                                                </div>
+                                                </div> --}}
                                                 <!-- END: Modal Content -->
                                             </div>
                                         </div>
-                                        <div
+                                        {{-- <div
                                             class="relative mt-3 rounded-[0.6rem] border border-slate-200/80 dark:border-darkmode-400">
                                             <div
                                                 class="absolute left-0 -mt-2 ml-4 bg-white px-3 text-xs uppercase text-slate-500">
@@ -192,13 +196,13 @@
                                                     <div
                                                         class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
                                                         <div class="w-54 sm:mr-auto">
-                                                            {{-- Total Price (11 items): --}}
+                                                            Total Price (11 items):
                                                             Biaya Pengiriman :
                                                         </div>
                                                         {{ number_format($pengiriman->biaya_pengiriman) }}
                                                     </div>
                                                 </div>
-                                                {{-- <div class="flex items-center">
+                                                <div class="flex items-center">
                                                 <i data-tw-merge="" data-lucide="clock" class="mr-2.5 h-4 w-4 stroke-[1.3] text-slate-500"></i>
                                                 <div class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
                                                     <div class="w-54 sm:mr-auto">
@@ -222,10 +226,10 @@
                                                     <div class="w-54 sm:mr-auto">Grand Total:</div>$
                                                     1.392
                                                 </div>
-                                            </div> --}}
                                             </div>
-                                        </div>
-                                        <div
+                                            </div>
+                                        </div> --}}
+                                        {{-- <div
                                             class="relative mt-3 rounded-[0.6rem] border border-slate-200/80 dark:border-darkmode-400">
                                             <div
                                                 class="absolute left-0 -mt-2 ml-4 bg-white px-3 text-xs uppercase text-slate-500">
@@ -268,8 +272,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div
+                                        </div> --}}
+                                        {{-- <div
                                             class="relative mt-3 rounded-[0.6rem] border border-slate-200/80 dark:border-darkmode-400">
                                             <div
                                                 class="absolute left-0 -mt-2 ml-4 bg-white px-3 text-xs uppercase text-slate-500">
@@ -294,7 +298,7 @@
                                                         {{ $pengiriman->kode_pengiriman }}
                                                     </div>
                                                 </div>
-                                                {{-- <div class="flex items-center">
+                                                <div class="flex items-center">
                                                 <i data-tw-merge="" data-lucide="clock" class="mr-2.5 h-4 w-4 stroke-[1.3] text-slate-500"></i>
                                                 <div class="flex w-full flex-col flex-wrap gap-y-1 sm:flex-row sm:items-center">
                                                     <div class="w-54 sm:mr-auto">Address:</div>
@@ -303,9 +307,9 @@
                                                         View Address
                                                     </a>
                                                 </div>
-                                            </div> --}}
                                             </div>
-                                        </div>
+                                            </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -354,87 +358,85 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr data-tw-merge=""
-                                                            class="[&_td]:first:pt-5 [&_td]:last:border-b-0 [&_td]:last:pb-5">
-                                                            <td data-tw-merge=""
-                                                                class="px-5 border-b dark:border-darkmode-300 border-dashed py-3.5 dark:bg-darkmode-600">
-                                                                <div class="flex items-center">
-                                                                    <div class="image-fit zoom-in h-11 w-11">
-                                                                        <img data-placement="top" title="Tue Mar 2021"
-                                                                            src="/storage/{{ $produk->gambar_produk }}"
-                                                                            alt="Tailwise - Admin Dashboard Template"
-                                                                            class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]">
-                                                                    </div>
-                                                                    <div class="ml-5">
-                                                                        <a class="whitespace-nowrap font-medium"
-                                                                            href="#">
-                                                                            {{ $produk->nama_produk }}
-                                                                        </a>
-                                                                        <div
-                                                                            class="mt-1 flex flex-col gap-0.5 whitespace-nowrap text-xs text-slate-500">
-                                                                            Category
-                                                                            :
-                                                                            {{ $produk->kategori_produk->nama_kategori }}
+                                                        {{-- @if (session('cart')) --}}
+                                                        @foreach ($detail_jual as $items)
+                                                            <tr data-tw-merge=""
+                                                                class="[&_td]:first:pt-5 [&_td]:last:border-b-0 [&_td]:last:pb-5">
+                                                                <td data-tw-merge=""
+                                                                    class="px-5 border-b dark:border-darkmode-300 border-dashed py-3.5 dark:bg-darkmode-600">
+                                                                    <div class="flex items-center">
+                                                                        <div class="image-fit zoom-in h-11 w-11">
+                                                                            <img data-placement="top"
+                                                                                title="{{ $penjualan->tanggal_jual }}"
+                                                                                src="/storage/{{ $items->produk->gambar_produk }}"
+                                                                                alt="Tailwise - Admin Dashboard Template"
+                                                                                class="tooltip cursor-pointer rounded-full shadow-[0px_0px_0px_2px_#fff,_1px_1px_5px_rgba(0,0,0,0.32)] dark:shadow-[0px_0px_0px_2px_#3f4865,_1px_1px_5px_rgba(0,0,0,0.32)]">
+                                                                        </div>
+                                                                        <div class="ml-5">
+                                                                            <a class="whitespace-nowrap font-medium"
+                                                                                href="#">
+                                                                                {{ $items->produk->nama_produk }}
+                                                                            </a>
+                                                                            <div
+                                                                                class="mt-1 flex flex-col gap-0.5 whitespace-nowrap text-xs text-slate-500">
+                                                                                Category
+                                                                                :
+                                                                                {{ $items->produk->kategori_produk->nama_kategori }}
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                </div>
-                                                            </td>
-                                                            <td data-tw-merge=""
-                                                                class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
-                                                                <div class="whitespace-nowrap">
-                                                                    {{ $detail_jual->jumlah_produk }}
-                                                                </div>
-                                                            </td>
-                                                            <td data-tw-merge=""
-                                                                class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
-                                                                <div class="whitespace-nowrap">
-                                                                    @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
-                                                                        {{ $detail_jual->produk->diskon_produk->nilai_diskon }}%
-                                                                    @elseif($detail_jual->produk->diskon_produk->jenis_diskon == 'nominal')
-                                                                        -{{ number_format($detail_jual->produk->diskon_produk->nilai_diskon) }}
-                                                                    @endif
-                                                                </div>
-                                                            </td>
-                                                            <td data-tw-merge=""
-                                                                class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
-                                                                <div class="whitespace-nowrap font-medium">
-                                                                    {{ number_format($detail_jual->harga_jual) }}
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-
+                                                                </td>
+                                                                <td data-tw-merge=""
+                                                                    class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
+                                                                    <div class="whitespace-nowrap">
+                                                                        {{ $items->jumlah_produk }}
+                                                                    </div>
+                                                                </td>
+                                                                <td data-tw-merge=""
+                                                                    class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
+                                                                    <div class="whitespace-nowrap">
+                                                                        @if ($items->produk->diskon_produk->jenis_diskon == 'persentase')
+                                                                            {{ $items->produk->diskon_produk->nilai_diskon }}%
+                                                                        @elseif($items->produk->diskon_produk->jenis_diskon == 'nominal')
+                                                                            -{{ number_format($items->produk->diskon_produk->nilai_diskon) }}
+                                                                        @endif
+                                                                    </div>
+                                                                </td>
+                                                                <td data-tw-merge=""
+                                                                    class="px-5 border-b dark:border-darkmode-300 border-dashed py-4 text-right dark:bg-darkmode-600">
+                                                                    <div class="whitespace-nowrap font-medium">
+                                                                        {{ number_format($items->harga_jual) }}
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
+
                                                 </table>
                                             </div>
                                             {{-- Mengitung --}}
-                                            @if ($detail_jual->produk->diskon_produk->jenis_diskon == 'persentase')
+                                            {{-- @if ($items->produk->diskon_produk->jenis_diskon == 'nominal')
                                                 @php
-                                                    $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
-                                                    $diskon = ($detail_jual->produk->diskon_produk->nilai_diskon / 100) * $detail_jual->jumlah_produk * $detail_jual->harga_jual;
-                                                    $biaya_pengiriman = $pengiriman->biaya_pengiriman;
-                                                    $total = $subtotal + $biaya_pengiriman - $diskon;
+                                                    $subtotal = $items->harga_jual * $items->jumlah_produk;
+                                                    $diskon = ($items->produk->diskon_produk->nilai_diskon / 100) * $items->jumlah_produk * $items->harga_jual;
+                                                    // $biaya_pengiriman = $pengiriman->biaya_pengiriman;
+                                                    $total = $subtotal - $diskon;
                                                 @endphp
-                                            @elseif($detail_jual->produk->diskon_produk->jenis_diskon == 'nominal')
+                                            @elseif($items->produk->diskon_produk->jenis_diskon == 'nominal')
                                                 @php
-                                                    $subtotal = $detail_jual->harga_jual * $detail_jual->jumlah_produk;
-                                                    $diskon = $detail_jual->produk->diskon_produk->nilai_diskon * $detail_jual->jumlah_produk;
-                                                    $biaya_pengiriman = $pengiriman->biaya_pengiriman;
-                                                    $total = $subtotal + $biaya_pengiriman - $diskon;
+                                                    $subtotal = $items->harga_jual * $items->jumlah_produk;
+                                                    $diskon = $items->produk->diskon_produk->nilai_diskon * $items->jumlah_produk;
+                                                    // $biaya_pengiriman = $pengiriman->biaya_pengiriman;
+                                                    $total = $subtotal - $diskon;
                                                 @endphp
-                                            @endif
+                                            @endif --}}
                                             {{-- Mengitung --}}
 
-                                            <div class="mb-5 ml-auto mt-3 flex flex-col gap-3.5 pr-5 text-right">
+                                            {{-- <div class="mb-5 ml-auto mt-3 flex flex-col gap-3.5 pr-5 text-right">
                                                 <div class="flex items-center justify-end">
                                                     <div class="text-slate-500">Subtotal :</div>
                                                     <div class="w-20 font-medium text-slate-600 sm:w-48">
                                                         {{ number_format($subtotal) }}
-                                                    </div>
-                                                </div>
-                                                <div class="flex items-center justify-end">
-                                                    <div class="text-slate-500">Biaya Pengiriman :</div>
-                                                    <div class="w-20 font-medium text-slate-600 sm:w-48">
-                                                        + {{ number_format($biaya_pengiriman) }}
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center justify-end">
@@ -449,7 +451,7 @@
                                                         {{ number_format($total) }}
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>

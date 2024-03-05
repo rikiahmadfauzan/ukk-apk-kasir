@@ -19,28 +19,28 @@
                         </div>
                         <div class="mt-3.5 flex flex-col gap-8">
                             <div class="box box--stacked flex flex-col p-5">
-                                <div class="grid grid-cols-4 gap-5">
+                                <div class="grid grid-cols-3 gap-5">
                                     <div
-                                        class="box col-span-4 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
+                                        class="box col-span-3 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
                                         <div class="text-base text-slate-500">Total Pengguna</div>
                                         <div class="mt-1.5 text-2xl font-medium">{{ $total_pengguna }}</div>
                                         <div class="absolute inset-y-0 right-0 mr-5 flex flex-col justify-center">
                                         </div>
                                     </div>
                                     <div
-                                        class="box col-span-4 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
+                                        class="box col-span-3 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
                                         <div class="text-base text-slate-500">Total Level</div>
                                         <div class="mt-1.5 text-2xl font-medium">{{ $total_level }}</div>
                                         <div class="absolute inset-y-0 right-0 mr-5 flex flex-col justify-center">
                                         </div>
                                     </div>
-                                    <div
-                                        class="box col-span-4 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
+                                    {{-- <div
+                                        class="box col-span-3 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
                                         <div class="text-base text-slate-500">Total Admin</div>
                                         <div class="font-mediumm mt-1.5 text-2xl">{{ $total_admin }}</div>
-                                    </div>
+                                    </div> --}}
                                     <div
-                                        class="box col-span-4 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
+                                        class="box col-span-3 rounded-[0.6rem] border border-dashed border-slate-300/80 p-5 shadow-sm md:col-span-2 xl:col-span-1">
                                         <div class="text-base text-slate-500">Total Petugas</div>
                                         <div class="font-mediumm mt-1.5 text-2xl">{{ $total_petugas }}</div>
                                     </div>

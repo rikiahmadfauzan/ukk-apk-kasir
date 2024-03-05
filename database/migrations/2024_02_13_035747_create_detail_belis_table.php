@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('harga_beli');
             $table->integer('jumlah_beli');
             $table->unsignedBigInteger('pembelian_id');
-            $table->unsignedBigInteger('produk_id');
+            $table->unsignedBigInteger('produk_id')->nullable();
             $table->foreign('pembelian_id')->references('id')->on('pembelians')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign('produk_id')->references('id')->on('produks')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

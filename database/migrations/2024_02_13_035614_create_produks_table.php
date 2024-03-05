@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('stok');
             $table->date('tanggal_kadaluarsa');
             $table->unsignedBigInteger('kategori_produk_id');
-            $table->unsignedBigInteger('diskon_produk_id');
+            $table->unsignedBigInteger('diskon_produk_id')->nullable();
             $table->foreign('kategori_produk_id')->references('id')->on('kategori_produks')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign('diskon_produk_id')->references('id')->on('diskon_produks')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();

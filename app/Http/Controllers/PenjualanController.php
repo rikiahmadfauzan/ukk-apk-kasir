@@ -7,12 +7,13 @@ use App\Models\Pelanggan;
 use App\Models\Pengiriman;
 use App\Models\Penjualan;
 use App\Models\Produk;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PenjualanController extends Controller
 {
 
-   
+
     // public function transaksi(){
     //     $data['produk'] = Produk::first();
     //     $data['detail_jual'] = DetailJual::first();
@@ -28,6 +29,8 @@ class PenjualanController extends Controller
         return view('penjualan.penjualan', $data);
     }
     public function create(Request $request){
+        $tanggal_jual = Carbon::now();
+
         $penjualan = Penjualan::latest()->first();
         $kode_penjualan = "PYSCHO";
         $kode_tahun = date('Y');
@@ -49,7 +52,7 @@ class PenjualanController extends Controller
             // 'kode_penjualan' => 'required',
             'pelanggan_id' => 'required',
             'metode_pembayaran' => 'required',
-            'tanggal_jual' => 'required',
+            // 'tanggal_jual' => 'required',
             // 'jumlah_produk' => 'required',
             // 'harga_jual' => 'required',
             // 'penjualan_id' => 'required',
@@ -73,7 +76,7 @@ class PenjualanController extends Controller
             'kode_penjualan' => $kode,
             'pelanggan_id' => $request->pelanggan_id,
             'metode_pembayaran' => $request->metode_pembayaran,
-            'tanggal_jual' => $request->tanggal_jual
+            'tanggal_jual' => $tanggal_jual
         ]);
         return redirect('/penjualan');
     }

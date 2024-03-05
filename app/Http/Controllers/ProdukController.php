@@ -36,7 +36,7 @@ class ProdukController extends Controller
         }
         // $kode = $kode_produk .'/'. $kode_tahun .'/'. $no_kode;
         $kode = "$kode_produk/$kode_tahun/$kode_bulan/$kode_hari/$no_kode";
-        $credentials = $request->validate([
+        $request->validate([
             // 'kode_produk' => 'required',
             'nama_produk' => 'required',
             'gambar_produk' => 'required',
@@ -44,8 +44,9 @@ class ProdukController extends Controller
             'stok' => 'required',
             'tanggal_kadaluarsa' => 'required',
             'kategori_produk_id' => 'required',
-            'diskon_produk_id' => 'required'
+            // 'diskon_produk_id' => 'required'
         ]);
+
         Produk::create([
             'kode_produk' => $kode,
             'nama_produk' => $request->nama_produk,
@@ -60,7 +61,7 @@ class ProdukController extends Controller
     }
 
     public function update(Request $request){
-        Produk::where('id', $request->id)->delete();
+        Produk::where('id', $request->id)->update();
         return redirect('/produk');
 
     }

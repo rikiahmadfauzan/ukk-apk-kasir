@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('pelanggans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_pelanggan');
-            $table->tinyText('alamat');
-            $table->string('no_telpon');
-            $table->unsignedBigInteger('user_id');
+            $table->tinyText('alamat')->nullable();
+            $table->string('no_telpon')->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
